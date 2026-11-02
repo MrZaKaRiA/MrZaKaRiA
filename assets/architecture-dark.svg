@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 366" width="100%" height="100%">
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  </style>
+
+  <rect width="1200" height="366" rx="20" fill="#060B14" stroke="#1E293B" stroke-width="1.5" />
+  <text x="28" y="38" class="font-mono" font-size="12" font-weight="700" fill="#14B8A6" letter-spacing="1.8">FULL-STACK TO BARE-METAL ENGINEERING ARCHITECTURE</text>
+  <text x="1172" y="38" text-anchor="end" class="font-mono" font-size="11" fill="#94A3B8">INTERFACE ↔ APPLICATION ↔ RUNTIME ↔ KERNEL</text>
+
+  
+    <g>
+      <rect x="24" y="62" width="1152" height="60" rx="12" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+      <rect x="24" y="62" width="6" height="60" rx="3" fill="#14B8A6" />
+      <text x="46" y="87" class="font-mono" font-size="12" font-weight="700" fill="#14B8A6" letter-spacing="1.2">01 // INTERFACE &amp; DESIGN SYSTEMS</text>
+      <text x="46" y="107" class="font-sans" font-size="12.5" fill="#94A3B8">Pixel-precise, ultra-fast web &amp; native interfaces with zero-bloat motion &amp; SEO/GEO architecture.</text>
+      
+        <rect x="580.0" y="78" width="70.4" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="615.2" y="96" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Astro 7</text>
+        <rect x="658.4" y="78" width="56.0" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="686.4" y="96" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Vue 3</text>
+        <rect x="722.4" y="78" width="77.6" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="761.2" y="96" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">React 19</text>
+        <rect x="808.0" y="78" width="70.4" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="843.2" y="96" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">SwiftUI</text>
+        <rect x="886.4" y="78" width="128.0" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="950.4" y="96" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Tailwind CSS v4</text>
+        <rect x="1022.4" y="78" width="113.6" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="1079.2" y="96" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Framer Motion</text>
+    </g>
+    <g>
+      <rect x="24" y="134" width="1152" height="60" rx="12" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+      <rect x="24" y="134" width="6" height="60" rx="3" fill="#38BDF8" />
+      <text x="46" y="159" class="font-mono" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.2">02 // ENTERPRISE ERP, CRM &amp; AI PLATFORMS</text>
+      <text x="46" y="179" class="font-sans" font-size="12.5" fill="#94A3B8">Self-hosted business operating systems, DGI e-invoicing, POS, treasury &amp; multi-LLM orchestration.</text>
+      
+        <rect x="580.0" y="150" width="84.8" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="622.4" y="168" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">RIVER ERP</text>
+        <rect x="672.8" y="150" width="113.6" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="729.6" y="168" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">RAIN Commerce</text>
+        <rect x="794.4" y="150" width="92.0" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="840.4" y="168" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Laravel 13</text>
+        <rect x="894.4" y="150" width="70.4" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="929.6" y="168" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">PHP 8.4</text>
+        <rect x="972.8" y="150" width="70.4" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="1008.0" y="168" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Node.js</text>
+    </g>
+    <g>
+      <rect x="24" y="206" width="1152" height="60" rx="12" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+      <rect x="24" y="206" width="6" height="60" rx="3" fill="#818CF8" />
+      <text x="46" y="231" class="font-mono" font-size="12" font-weight="700" fill="#818CF8" letter-spacing="1.2">03 // NATIVE DESKTOP, VIRTUALIZATION &amp; NETWORK SECURITY</text>
+      <text x="46" y="251" class="font-sans" font-size="12.5" fill="#94A3B8">Apple Silicon hypervisors, cross-platform Rust desktop launchers &amp; L2/L3 SD-WAN packet diagnostics.</text>
+      
+        <rect x="580.0" y="222" width="236.0" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="698.0" y="240" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">LumenVM (Apple Virtualization)</text>
+        <rect x="824.0" y="222" width="77.6" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="862.8" y="240" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Tauri v2</text>
+        <rect x="909.6" y="222" width="48.8" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="934.0" y="240" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Rust</text>
+        <rect x="966.4" y="222" width="142.4" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="1037.6" y="240" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">NetSentinel L2/L3</text>
+    </g>
+    <g>
+      <rect x="24" y="278" width="1152" height="60" rx="12" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+      <rect x="24" y="278" width="6" height="60" rx="3" fill="#F59E0B" />
+      <text x="46" y="303" class="font-mono" font-size="12" font-weight="700" fill="#F59E0B" letter-spacing="1.2">04 // BARE-METAL LINUX, SERVER &amp; CLOUD INFRASTRUCTURE</text>
+      <text x="46" y="323" class="font-sans" font-size="12.5" fill="#94A3B8">Minimalist Suckless Linux distros, hardened Webmin/Virtualmin Docker engines &amp; encrypted backups.</text>
+      
+        <rect x="580.0" y="294" width="185.6" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="672.8" y="312" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">AbyssLinux (Void + dwm)</text>
+        <rect x="773.6" y="294" width="120.8" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="834.0" y="312" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Debian Servers</text>
+        <rect x="902.4" y="294" width="142.4" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="973.6" y="312" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Virtualmin-Docker</text>
+        <rect x="1052.8" y="294" width="48.8" height="28" rx="7" fill="#132238" stroke="#23395B" stroke-width="1" />
+        <text x="1077.2" y="312" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Perl</text>
+    </g>
+</svg>

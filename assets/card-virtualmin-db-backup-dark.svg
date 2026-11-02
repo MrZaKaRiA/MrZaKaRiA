@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 206" width="100%" height="100%">
+  <defs>
+    <linearGradient id="topBar-virtualmin-db-backup" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  </style>
+
+  <rect width="580" height="206" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1.5" />
+  <rect x="20" y="1" width="540" height="3" rx="1.5" fill="url(#topBar-virtualmin-db-backup)" />
+
+  <g transform="translate(24, 28)">
+    <rect x="0" y="0" width="217" height="24" rx="6" fill="#132238" stroke="#10B981" stroke-width="1" stroke-opacity="0.6" />
+    <text x="11" y="16" class="font-mono" font-size="10.5" font-weight="700" fill="#10B981" letter-spacing="0.8">DATABASE DISASTER RECOVERY</text>
+
+    <text x="532" y="16" text-anchor="end" class="font-mono" font-size="12" font-weight="700" fill="#10B981">PUBLIC OSS</text>
+
+    <text x="0" y="56" class="font-sans" font-size="22" font-weight="800" fill="#F8FAFC">Virtualmin-Db-Backup</text>
+    <text x="532" y="54" text-anchor="end" class="font-mono" font-size="14" fill="#10B981">↗</text>
+
+    <text x="0" y="84" class="font-sans" font-size="13.5" fill="#94A3B8">Hardened Webmin/Virtualmin engine to back up MySQL, MariaDB, PostgreSQL,</text>
+    <text x="0" y="105" class="font-sans" font-size="13.5" fill="#94A3B8">MongoDB &amp; SQLite (host or Docker) with encryption, checksums &amp; S3/Drive sync.</text>
+  </g>
+
+  
+    <rect x="24.0" y="158" width="48.8" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
+    <text x="48.4" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Perl</text>
+    <rect x="80.8" y="158" width="135.2" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
+    <text x="148.4" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">MySQL / Postgres</text>
+    <rect x="224.0" y="158" width="70.4" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
+    <text x="259.2" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">MongoDB</text>
+    <rect x="302.4" y="158" width="63.2" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
+    <text x="334.0" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Docker</text>
+    <rect x="373.6" y="158" width="92.0" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
+    <text x="419.6" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Cloud Sync</text>
+</svg>

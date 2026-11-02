@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 206" width="100%" height="100%">
+  <defs>
+    <linearGradient id="topBar-abysslinux" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+  </style>
+
+  <rect width="580" height="206" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+  <rect x="20" y="1" width="540" height="3" rx="1.5" fill="url(#topBar-abysslinux)" />
+
+  <g transform="translate(24, 28)">
+    <rect x="0" y="0" width="254" height="24" rx="6" fill="#F1F5F9" stroke="#D97706" stroke-width="1" stroke-opacity="0.6" />
+    <text x="11" y="16" class="font-mono" font-size="10.5" font-weight="700" fill="#D97706" letter-spacing="0.8">SUCKLESS LINUX OPERATING SYSTEM</text>
+
+    <text x="532" y="16" text-anchor="end" class="font-mono" font-size="12" font-weight="700" fill="#D97706">★ 3   ⑂ 1</text>
+
+    <text x="0" y="56" class="font-sans" font-size="22" font-weight="800" fill="#0F172A">AbyssLinux &amp; PMR</text>
+    <text x="532" y="54" text-anchor="end" class="font-mono" font-size="14" fill="#D97706">↗</text>
+
+    <text x="0" y="84" class="font-sans" font-size="13.5" fill="#475569">Minimalist Suckless-inspired rolling-release Linux distribution &amp; package</text>
+    <text x="0" y="105" class="font-sans" font-size="13.5" fill="#475569">repository built on Void Linux, runit, dwm, st, and dmenu (x86_64 &amp; ARM64).</text>
+  </g>
+
+  
+    <rect x="24.0" y="158" width="106.4" height="26" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+    <text x="77.2" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#0F172A">Linux Distro</text>
+    <rect x="138.4" y="158" width="56.0" height="26" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+    <text x="166.4" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#0F172A">Shell</text>
+    <rect x="202.4" y="158" width="106.4" height="26" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+    <text x="255.6" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#0F172A">C / Suckless</text>
+    <rect x="316.8" y="158" width="41.6" height="26" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+    <text x="337.6" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#0F172A">dwm</text>
+    <rect x="366.4" y="158" width="48.8" height="26" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+    <text x="390.8" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#0F172A">xbps</text>
+    <rect x="423.2" y="158" width="56.0" height="26" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+    <text x="451.2" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#0F172A">ARM64</text>
+</svg>

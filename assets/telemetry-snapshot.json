@@ -1,0 +1,2097 @@
+{
+  "updated_at": "2026-11-02 11:19 UTC",
+  "followers": 14,
+  "owned_repos": 61,
+  "public_repos_total": 650,
+  "total_stars": 25,
+  "total_forks": 9,
+  "annual_contributions": 2972,
+  "lifetime_contributions": 3433,
+  "max_daily_contributions": 131,
+  "active_days_year": 197,
+  "languages": {
+    "Rust": 245978,
+    "HTML": 5544740,
+    "JavaScript": 9730318,
+    "PHP": 44967441,
+    "TypeScript": 5301062,
+    "Blade": 1456678,
+    "SCSS": 617644,
+    "Shell": 689694,
+    "Python": 302491,
+    "Go Template": 45282,
+    "Makefile": 51762,
+    "Vue": 19102118,
+    "Swift": 874526,
+    "CSS": 2049363,
+    "Kotlin": 15153,
+    "Astro": 2691021,
+    "Objective-C": 35552,
+    "C": 324097,
+    "Roff": 19377,
+    "HCL": 3611,
+    "Vim Script": 921,
+    "Dockerfile": 356,
+    "Perl": 350648,
+    "Raku": 2282,
+    "PLpgSQL": 103825,
+    "MDX": 44185,
+    "PowerShell": 570,
+    "Solidity": 10471
+  },
+  "yearly_contributions": {
+    "2020": 64,
+    "2021": 20,
+    "2022": 21,
+    "2023": 40,
+    "2024": 102,
+    "2025": 285,
+    "2026": 2901
+  },
+  "repos": {
+    "NetSentinel": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Net Sentinel",
+      "lang": "Rust"
+    },
+    "MrZaKaRiA": {
+      "stars": 1,
+      "forks": 0,
+      "description": "Config files for my GitHub profile.",
+      "lang": ""
+    },
+    "mrzakariacom": {
+      "stars": 0,
+      "forks": 1,
+      "description": "This is my beautiful MrZaKaRiA website made with love in 2023 and updated throughout 2024 and 2025",
+      "lang": "PHP"
+    },
+    "rain": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Rain Online Store",
+      "lang": "PHP"
+    },
+    "smartott": {
+      "stars": 0,
+      "forks": 0,
+      "description": "SMART OTT \u2014 premium 4K IPTV subscription website. Astro 6 static site (184 pages): plans, regions, sports, setup guides, tools, SEO/GEO. By RAIN STUDIO.",
+      "lang": "Astro"
+    },
+    "ERPStore": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Erp Crm Subscription Management Panel, VueJs Frontend and Php API Backend connects to Sql database",
+      "lang": "PHP"
+    },
+    "LumenVM": {
+      "stars": 11,
+      "forks": 2,
+      "description": "Native SwiftUI virtual machine manager for Apple Silicon: macOS and Linux via Apple Virtualization, experimental Windows ARM64, sparse disks, Retina displays and per-VM Dock icons.",
+      "lang": "Swift"
+    },
+    "mrzakaria-git": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "rain-studio": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "Astro"
+    },
+    "LumenVMWebsite": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "AbyssLinuxWebsite": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "AbyssLinux": {
+      "stars": 3,
+      "forks": 1,
+      "description": "The Suckless Linux Operating System",
+      "lang": "Shell"
+    },
+    "river": {
+      "stars": 0,
+      "forks": 0,
+      "description": "RIVER ERP \u2014 AI-native ERP & CRM for Morocco and Europe: documents, DGI e-invoicing, POS, stock, treasury, payroll and a live view of the whole business. Laravel 13 \u00b7 Vue 3 \u00b7 Tailwind v4.",
+      "lang": "PHP"
+    },
+    "AbyssLinuxPMR": {
+      "stars": 0,
+      "forks": 0,
+      "description": "AbyssLinux Package Manager Repo",
+      "lang": "CSS"
+    },
+    "pods": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Self-hosted AI podcast platform for creating, publishing, and listening to multi-speaker shows with integrations for Gemini, Groq, Hugging Face, OpenAI, Claude, and NVIDIA NIM.",
+      "lang": "Vue"
+    },
+    "certficate-manager": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Modern certificate issuance and verification platform built with React and Laravel, featuring secure credential lifecycle management and responsive certificate design.",
+      "lang": "TypeScript"
+    },
+    "Lumens-VM": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Native SwiftUI virtual-machine manager for Apple Silicon with Apple Virtualization & QEMU, Windows ARM setup bypass, Linux catalog, ISO detection, and host safeguards",
+      "lang": "Swift"
+    },
+    "Virtualmin-Docker": {
+      "stars": 9,
+      "forks": 4,
+      "description": "Webmin Virtualmin Docker",
+      "lang": "Perl"
+    },
+    "mfieldmea": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Website for MField & Data Insight \u2014 fieldwork & data-processing agency in Casablanca serving Morocco & MEA. Astro 5 static site \u00b7 light/dark design system \u00b7 Framer Motion-style animation \u00b7 SEO-first \u00b7 v27.1.1",
+      "lang": "Astro"
+    },
+    "mrzakaria-demo": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "Astro"
+    },
+    "rain-studio-templates": {
+      "stars": 0,
+      "forks": 0,
+      "description": "51 responsive Astro landing page templates with Framer Motion by RAIN DESIGN STUDIO.",
+      "lang": "HTML"
+    },
+    "template-atlas-construction": {
+      "stars": 0,
+      "forks": 0,
+      "description": "ATLAS CONSTRUCTION \u2014 responsive Astro and Framer Motion website for towers, homes, palaces, and civic landmarks.",
+      "lang": "TypeScript"
+    },
+    "service-theme": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Editorial Astro subscription website template with Motion scroll effects, five accent colors, theme toggle, and Apache clean URLs.",
+      "lang": "TypeScript"
+    },
+    "blood-analysis": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "Astro"
+    },
+    "Veloire-Rare-Car-Collection": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "forme-interior-studio": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "Astro"
+    },
+    "origin-element": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Origin \u039element \u2014 independent AI integration consultancy website built with Astro, with services, case studies and guides.",
+      "lang": "Astro"
+    },
+    "rain-school": {
+      "stars": 0,
+      "forks": 0,
+      "description": "RAIN SCHOOL primary-school landing page built with Astro 7, React 19, and Motion.",
+      "lang": "TypeScript"
+    },
+    "shi": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Website for shi (Smart High IT): networks, cabling, CCTV & access control, servers & backup, VoIP, solar and IT hardware across Morocco. Astro 7 \u00b7 React 19 \u00b7 Framer Motion \u00b7 static Apache deploy.",
+      "lang": "JavaScript"
+    },
+    "origin-server": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Hosting storefront and database-free server request configurator built with React, Vite, Motion, and PHP/PHPMailer.",
+      "lang": "JavaScript"
+    },
+    "panolux": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": ""
+    },
+    "gmab": {
+      "stars": 0,
+      "forks": 0,
+      "description": "GMAB \u2014 Global Menuiserie Aluminium et Bois (Maroc). Astro 7 static site: 66 SEO/GEO pages, Open Graph cards, Motion animations, interactive /seo page map.",
+      "lang": "Astro"
+    },
+    "robofriends": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "JavaScript"
+    },
+    "cheque-print": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Impression de ch\u00e8ques et d'effets (lettres de change) pour les banques marocaines \u2014 React 19 + Vite, sans backend",
+      "lang": "JavaScript"
+    },
+    "server-setup": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Titan Server Setup",
+      "lang": ""
+    },
+    "minierp": {
+      "stars": 0,
+      "forks": 0,
+      "description": "MiniERP a dedicated Gold shop ERP",
+      "lang": "PHP"
+    },
+    "up": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Download Center",
+      "lang": "PHP"
+    },
+    "Virtualmin-File-Backup": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Full Virtualmin Webmin Public_html Backup",
+      "lang": "Perl"
+    },
+    "ps1": {
+      "stars": 0,
+      "forks": 0,
+      "description": "PS1 Linux/macOS Terminal Customization",
+      "lang": "Shell"
+    },
+    "Virtualmin-Db-Backup": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Hardened Webmin/Virtualmin module to back up MySQL, MariaDB, PostgreSQL, MongoDB & SQLite (host or Docker) \u2014 compression, encryption, checksums, cloud upload (S3/Dropbox/Drive) and scheduling.",
+      "lang": "Perl"
+    },
+    "rain-desktop": {
+      "stars": 0,
+      "forks": 0,
+      "description": "RAIN \u2014 a complete commerce platform, with a native desktop launcher for macOS, Windows & Linux.",
+      "lang": "JavaScript"
+    },
+    "river-desktop": {
+      "stars": 0,
+      "forks": 0,
+      "description": "RIVER ERP \u2014 the all-in-one, self-hosted business OS for Morocco & the EU. Native desktop launcher (Tauri v2) for macOS, Windows & Linux \u2014 Apple Silicon, ARM64 & x64.",
+      "lang": "Rust"
+    },
+    "mediaprogetti": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "HTML"
+    },
+    "2rcloud": {
+      "stars": 0,
+      "forks": 0,
+      "description": "2RCloud",
+      "lang": "CSS"
+    },
+    "hotel-azur": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "HTML"
+    },
+    "survey": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Data Collection app",
+      "lang": "Vue"
+    },
+    "mdm": {
+      "stars": 0,
+      "forks": 0,
+      "description": "For learning purposes only",
+      "lang": "Shell"
+    },
+    "room-booking": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Room Booking System",
+      "lang": "TypeScript"
+    },
+    "project-5": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "project-black": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "ErpCrmPanel": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "subscripedia-automation-hub": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "glow-up-subscriptions-hub": {
+      "stars": 0,
+      "forks": 0,
+      "description": "This  is a simple application to track all my subscriptions",
+      "lang": "TypeScript"
+    },
+    "DallEGen": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Generate pictures using open AI DALL-E API",
+      "lang": "Python"
+    },
+    "nextjs-contentlayer": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "MDX"
+    },
+    "astro-platform-starter": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "Astro"
+    },
+    "coffee_machine": {
+      "stars": 0,
+      "forks": 0,
+      "description": "software for coffee machine",
+      "lang": "Python"
+    },
+    "AutomatedMySQLBackup": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Automated MySQL Backup with Rclone Sync",
+      "lang": "Shell"
+    },
+    "ScheduledFolderBackup": {
+      "stars": 0,
+      "forks": 1,
+      "description": "Scheduled Folder Backup on Windows using Power Shell script",
+      "lang": "PowerShell"
+    },
+    "DropboxSQL": {
+      "stars": 0,
+      "forks": 0,
+      "description": "This Python script automatically sends SQL backups of every database on Debian 11 VPS to Dropbox",
+      "lang": "Python"
+    },
+    "EthToken": {
+      "stars": 1,
+      "forks": 0,
+      "description": "Token sol",
+      "lang": "Solidity"
+    }
+  },
+  "weeks": [
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2025-11-02"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-03"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-04"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-05"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-06"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2025-11-07"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-08"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2025-11-09"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-10"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-11"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-12"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-13"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-14"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-15"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2025-11-16"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-17"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-18"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-19"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-20"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-21"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-22"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2025-11-23"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-24"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-25"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-26"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-27"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-28"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-11-29"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2025-11-30"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-01"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-02"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-03"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-04"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-05"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2025-12-06"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2025-12-07"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-08"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-09"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-10"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-11"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-12"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-13"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2025-12-14"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-15"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-16"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-17"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-18"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-19"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-20"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 2,
+          "date": "2025-12-21"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-22"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-23"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-24"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2025-12-25"
+        },
+        {
+          "contributionCount": 53,
+          "date": "2025-12-26"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2025-12-27"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 5,
+          "date": "2025-12-28"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-29"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-30"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2025-12-31"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-01"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-02"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-03"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-01-04"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-05"
+        },
+        {
+          "contributionCount": 11,
+          "date": "2026-01-06"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-01-07"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-08"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-01-09"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-10"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-01-11"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-12"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-01-13"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-01-14"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-15"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-16"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-01-17"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-01-18"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-19"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-20"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-21"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-01-22"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-23"
+        },
+        {
+          "contributionCount": 5,
+          "date": "2026-01-24"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-01-25"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-26"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-27"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-28"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-29"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-30"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-01-31"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-02-01"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-02"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-03"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-04"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-05"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-06"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-07"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-02-08"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-02-09"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-10"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-11"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-12"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-13"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-14"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-02-15"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-16"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-17"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-18"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-02-19"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-02-20"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-02-21"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-02-22"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-23"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-24"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-25"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-26"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-27"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-02-28"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-03-01"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-02"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-03"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-04"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-05"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-06"
+        },
+        {
+          "contributionCount": 9,
+          "date": "2026-03-07"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-03-08"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-03-09"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-03-10"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-03-11"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-12"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-03-13"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-03-14"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-03-15"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-03-16"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-17"
+        },
+        {
+          "contributionCount": 5,
+          "date": "2026-03-18"
+        },
+        {
+          "contributionCount": 12,
+          "date": "2026-03-19"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-03-20"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-21"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 1,
+          "date": "2026-03-22"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-23"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-24"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-03-25"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-26"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-27"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-03-28"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-03-29"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-03-30"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-03-31"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-01"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-04-02"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-03"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-04"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-04-05"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-06"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-07"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-08"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-09"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-04-10"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-04-11"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 1,
+          "date": "2026-04-12"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-13"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-14"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-15"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-04-16"
+        },
+        {
+          "contributionCount": 11,
+          "date": "2026-04-17"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-04-18"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-04-19"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-04-20"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-21"
+        },
+        {
+          "contributionCount": 10,
+          "date": "2026-04-22"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-04-23"
+        },
+        {
+          "contributionCount": 18,
+          "date": "2026-04-24"
+        },
+        {
+          "contributionCount": 8,
+          "date": "2026-04-25"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 1,
+          "date": "2026-04-26"
+        },
+        {
+          "contributionCount": 23,
+          "date": "2026-04-27"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-28"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-29"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-04-30"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-05-01"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-05-02"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-05-03"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-05-04"
+        },
+        {
+          "contributionCount": 12,
+          "date": "2026-05-05"
+        },
+        {
+          "contributionCount": 37,
+          "date": "2026-05-06"
+        },
+        {
+          "contributionCount": 25,
+          "date": "2026-05-07"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-05-08"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-05-09"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-05-10"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-05-11"
+        },
+        {
+          "contributionCount": 63,
+          "date": "2026-05-12"
+        },
+        {
+          "contributionCount": 93,
+          "date": "2026-05-13"
+        },
+        {
+          "contributionCount": 131,
+          "date": "2026-05-14"
+        },
+        {
+          "contributionCount": 46,
+          "date": "2026-05-15"
+        },
+        {
+          "contributionCount": 33,
+          "date": "2026-05-16"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 42,
+          "date": "2026-05-17"
+        },
+        {
+          "contributionCount": 33,
+          "date": "2026-05-18"
+        },
+        {
+          "contributionCount": 38,
+          "date": "2026-05-19"
+        },
+        {
+          "contributionCount": 24,
+          "date": "2026-05-20"
+        },
+        {
+          "contributionCount": 34,
+          "date": "2026-05-21"
+        },
+        {
+          "contributionCount": 67,
+          "date": "2026-05-22"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-05-23"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-05-24"
+        },
+        {
+          "contributionCount": 41,
+          "date": "2026-05-25"
+        },
+        {
+          "contributionCount": 11,
+          "date": "2026-05-26"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-05-27"
+        },
+        {
+          "contributionCount": 37,
+          "date": "2026-05-28"
+        },
+        {
+          "contributionCount": 35,
+          "date": "2026-05-29"
+        },
+        {
+          "contributionCount": 8,
+          "date": "2026-05-30"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 36,
+          "date": "2026-05-31"
+        },
+        {
+          "contributionCount": 62,
+          "date": "2026-06-01"
+        },
+        {
+          "contributionCount": 52,
+          "date": "2026-06-02"
+        },
+        {
+          "contributionCount": 62,
+          "date": "2026-06-03"
+        },
+        {
+          "contributionCount": 22,
+          "date": "2026-06-04"
+        },
+        {
+          "contributionCount": 45,
+          "date": "2026-06-05"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-06-06"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-06-07"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-06-08"
+        },
+        {
+          "contributionCount": 9,
+          "date": "2026-06-09"
+        },
+        {
+          "contributionCount": 23,
+          "date": "2026-06-10"
+        },
+        {
+          "contributionCount": 21,
+          "date": "2026-06-11"
+        },
+        {
+          "contributionCount": 5,
+          "date": "2026-06-12"
+        },
+        {
+          "contributionCount": 13,
+          "date": "2026-06-13"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 12,
+          "date": "2026-06-14"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-06-15"
+        },
+        {
+          "contributionCount": 39,
+          "date": "2026-06-16"
+        },
+        {
+          "contributionCount": 22,
+          "date": "2026-06-17"
+        },
+        {
+          "contributionCount": 14,
+          "date": "2026-06-18"
+        },
+        {
+          "contributionCount": 10,
+          "date": "2026-06-19"
+        },
+        {
+          "contributionCount": 18,
+          "date": "2026-06-20"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 24,
+          "date": "2026-06-21"
+        },
+        {
+          "contributionCount": 16,
+          "date": "2026-06-22"
+        },
+        {
+          "contributionCount": 13,
+          "date": "2026-06-23"
+        },
+        {
+          "contributionCount": 13,
+          "date": "2026-06-24"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-06-25"
+        },
+        {
+          "contributionCount": 5,
+          "date": "2026-06-26"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-06-27"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 12,
+          "date": "2026-06-28"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-06-29"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-06-30"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-07-01"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-07-02"
+        },
+        {
+          "contributionCount": 12,
+          "date": "2026-07-03"
+        },
+        {
+          "contributionCount": 30,
+          "date": "2026-07-04"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 5,
+          "date": "2026-07-05"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-07-06"
+        },
+        {
+          "contributionCount": 8,
+          "date": "2026-07-07"
+        },
+        {
+          "contributionCount": 5,
+          "date": "2026-07-08"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-09"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-07-10"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-07-11"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 6,
+          "date": "2026-07-12"
+        },
+        {
+          "contributionCount": 22,
+          "date": "2026-07-13"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-07-14"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-07-15"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-16"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-17"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 2,
+          "date": "2026-07-19"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-07-20"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-21"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-22"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-07-23"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-07-24"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-25"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 1,
+          "date": "2026-07-26"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-27"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-07-28"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-07-29"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-30"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-07-31"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-08-01"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-08-02"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-08-03"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-08-04"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-08-05"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-08-06"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-08-07"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-08-08"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-08-09"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-08-10"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-08-11"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-08-12"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-08-13"
+        },
+        {
+          "contributionCount": 10,
+          "date": "2026-08-14"
+        },
+        {
+          "contributionCount": 15,
+          "date": "2026-08-15"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 29,
+          "date": "2026-08-16"
+        },
+        {
+          "contributionCount": 13,
+          "date": "2026-08-17"
+        },
+        {
+          "contributionCount": 18,
+          "date": "2026-08-18"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-08-19"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-08-20"
+        },
+        {
+          "contributionCount": 17,
+          "date": "2026-08-21"
+        },
+        {
+          "contributionCount": 11,
+          "date": "2026-08-22"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 2,
+          "date": "2026-08-23"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-08-24"
+        },
+        {
+          "contributionCount": 40,
+          "date": "2026-08-25"
+        },
+        {
+          "contributionCount": 34,
+          "date": "2026-08-26"
+        },
+        {
+          "contributionCount": 22,
+          "date": "2026-08-27"
+        },
+        {
+          "contributionCount": 18,
+          "date": "2026-08-28"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-08-29"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 3,
+          "date": "2026-08-30"
+        },
+        {
+          "contributionCount": 10,
+          "date": "2026-08-31"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-09-01"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-09-02"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-09-03"
+        },
+        {
+          "contributionCount": 21,
+          "date": "2026-09-04"
+        },
+        {
+          "contributionCount": 21,
+          "date": "2026-09-05"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 5,
+          "date": "2026-09-06"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-09-07"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-09-08"
+        },
+        {
+          "contributionCount": 13,
+          "date": "2026-09-09"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-09-10"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-09-11"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 1,
+          "date": "2026-09-13"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-09-14"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-09-15"
+        },
+        {
+          "contributionCount": 5,
+          "date": "2026-09-16"
+        },
+        {
+          "contributionCount": 24,
+          "date": "2026-09-17"
+        },
+        {
+          "contributionCount": 8,
+          "date": "2026-09-18"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 2,
+          "date": "2026-09-20"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-09-21"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-09-22"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-09-23"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-09-24"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-09-25"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-09-26"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-09-27"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-09-28"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-09-29"
+        },
+        {
+          "contributionCount": 12,
+          "date": "2026-09-30"
+        },
+        {
+          "contributionCount": 10,
+          "date": "2026-10-01"
+        },
+        {
+          "contributionCount": 28,
+          "date": "2026-10-02"
+        },
+        {
+          "contributionCount": 13,
+          "date": "2026-10-03"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 31,
+          "date": "2026-10-04"
+        },
+        {
+          "contributionCount": 60,
+          "date": "2026-10-05"
+        },
+        {
+          "contributionCount": 28,
+          "date": "2026-10-06"
+        },
+        {
+          "contributionCount": 51,
+          "date": "2026-10-07"
+        },
+        {
+          "contributionCount": 28,
+          "date": "2026-10-08"
+        },
+        {
+          "contributionCount": 27,
+          "date": "2026-10-09"
+        },
+        {
+          "contributionCount": 19,
+          "date": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 25,
+          "date": "2026-10-11"
+        },
+        {
+          "contributionCount": 39,
+          "date": "2026-10-12"
+        },
+        {
+          "contributionCount": 32,
+          "date": "2026-10-13"
+        },
+        {
+          "contributionCount": 12,
+          "date": "2026-10-14"
+        },
+        {
+          "contributionCount": 2,
+          "date": "2026-10-15"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-10-16"
+        },
+        {
+          "contributionCount": 66,
+          "date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 0,
+          "date": "2026-10-18"
+        },
+        {
+          "contributionCount": 35,
+          "date": "2026-10-19"
+        },
+        {
+          "contributionCount": 53,
+          "date": "2026-10-20"
+        },
+        {
+          "contributionCount": 95,
+          "date": "2026-10-21"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-10-22"
+        },
+        {
+          "contributionCount": 18,
+          "date": "2026-10-23"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-10-24"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 4,
+          "date": "2026-10-25"
+        },
+        {
+          "contributionCount": 67,
+          "date": "2026-10-26"
+        },
+        {
+          "contributionCount": 5,
+          "date": "2026-10-27"
+        },
+        {
+          "contributionCount": 4,
+          "date": "2026-10-28"
+        },
+        {
+          "contributionCount": 5,
+          "date": "2026-10-29"
+        },
+        {
+          "contributionCount": 0,
+          "date": "2026-10-30"
+        },
+        {
+          "contributionCount": 1,
+          "date": "2026-10-31"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 1,
+          "date": "2026-11-01"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-11-02"
+        }
+      ]
+    }
+  ]
+}
