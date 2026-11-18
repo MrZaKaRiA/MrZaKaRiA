@@ -1,147 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="MrZaKaRiA — I build business software, operating systems, and the servers they run on.">
   <defs>
-    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F8FAFC" />
-      <stop offset="55%" stop-color="#F1F5F9" />
-      <stop offset="100%" stop-color="#ECFEFF" />
-    </linearGradient>
-    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0D9488" />
-      <stop offset="50%" stop-color="#0284C7" />
-      <stop offset="100%" stop-color="#4F46E5" />
-    </linearGradient>
-    <radialGradient id="orbTeal" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#0D9488" stop-opacity="0.18" />
-      <stop offset="100%" stop-color="#0D9488" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="orbCyan" cx="85%" cy="75%" r="45%">
-      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.16" />
-      <stop offset="100%" stop-color="#0284C7" stop-opacity="0" />
-    </radialGradient>
-    <pattern id="blueprintGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E2E8F0" stroke-width="0.7" stroke-opacity="0.45" />
+    <pattern id="z" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M28.00 0.00 L56.00 28.00 L28.00 56.00 L0.00 28.00Z M25.0 28.0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0" fill="none" stroke="#B8AD9C" stroke-width=".7"/>
     </pattern>
+    <radialGradient id="fadeR" cx="0.775" cy=".5" r=".55">
+      <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+      <stop offset=".55" stop-color="#fff" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="m"><rect width="1200" height="460" fill="url(#fadeR)"/></mask>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#C4471F" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#C4471F" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="nameClip"><rect x="0" y="0" width="0" height="460">
+      <animate attributeName="width" from="0" to="1200" dur="1.6s" begin=".2s" fill="freeze" calcMode="spline" keySplines=".65 0 .35 1" keyTimes="0;1"/>
+    </rect></clipPath>
+    <clipPath id="typeClip"><rect x="96" y="300" width="0" height="40">
+      <animate attributeName="width" values="0.0;10.8;21.7;32.5;43.4;54.2;65.0;75.9;86.7;97.6;108.4;119.2;130.1;140.9;151.8;162.6;173.4;184.3;195.1;206.0;216.8;227.6;238.5;249.3;260.2;271.0;281.8;292.7;303.5;314.4;325.2;336.0;346.9;357.7;368.6;379.4" keyTimes="0.000;0.029;0.057;0.086;0.114;0.143;0.171;0.200;0.229;0.257;0.286;0.314;0.343;0.371;0.400;0.429;0.457;0.486;0.514;0.543;0.571;0.600;0.629;0.657;0.686;0.714;0.743;0.771;0.800;0.829;0.857;0.886;0.914;0.943;0.971;1.000" calcMode="discrete" dur="2.2s" begin="1.9s" fill="freeze"/>
+    </rect></clipPath>
   </defs>
-
   <style>
-    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
-    .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
-    @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.45; transform: scale(1.35); }
+    .serif { font-family: 'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif; }
+    .mono { font-family: ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace; }
+    .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.65,0,.35,1) forwards; }
+    .fade { opacity: 0; animation: fade 1.2s ease forwards; }
+    .rise { opacity: 0; animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinr { to { transform: rotate(-360deg); } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes breathe { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+    @keyframes sway { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
     }
-    @keyframes scanline {
-      0% { transform: translateX(-200px); opacity: 0; }
-      50% { opacity: 0.9; }
-      100% { transform: translateX(1200px); opacity: 0; }
-    }
-    @keyframes blinkCursor {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
-    }
-    .pulse { animation: pulseDot 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
-    .cursor { animation: blinkCursor 1.1s infinite; }
-    .scan { animation: scanline 7s ease-in-out infinite; }
-    .float-card { animation: floatSlow 5s ease-in-out infinite; }
+    .rot { transform-origin: 930px 230px; animation: spin 120s linear infinite; }
+    .rotr { transform-origin: 930px 230px; animation: spinr 160s linear infinite; }
+    .pulse { transform-origin: 930px 230px; animation: breathe 5s ease-in-out infinite; }
+    .lantern { transform-origin: 930px 150px; animation: sway 6s ease-in-out infinite; }
+    .cursor { animation: blink 1s steps(1) infinite; }
   </style>
 
-  <!-- Background Canvas -->
-  <rect width="1200" height="340" rx="20" fill="url(#heroBg)" stroke="#E2E8F0" stroke-width="1.5" />
-  <rect width="1200" height="340" rx="20" fill="url(#blueprintGrid)" />
-  <rect width="1200" height="340" rx="20" fill="url(#orbTeal)" />
-  <rect width="1200" height="340" rx="20" fill="url(#orbCyan)" />
+  <rect x=".5" y=".5" width="1199" height="459" rx="10" fill="#F5EFE4" stroke="#DED3C2"/>
+  <rect width="1200" height="460" rx="10" fill="url(#z)" mask="url(#m)" opacity=".55"/>
+  <circle cx="930" cy="230" r="230" fill="url(#glow)" class="pulse"/>
 
-  <!-- Top Animated Laser Accent Line -->
-  <rect x="40" y="1" width="1120" height="2" fill="url(#brandGrad)" opacity="0.45" />
-  <rect class="scan" x="0" y="0" width="220" height="3" fill="url(#brandGrad)" rx="1.5" />
+  <!-- doorway -->
+  <circle class="rotr" cx="930" cy="230" r="198" fill="none" stroke="#DED3C2" stroke-width="1" stroke-dasharray="2 6"/>
+  <g class="rot fade" style="animation-delay:.2s"><path d="M1108.00 225.00 L1113.00 230.00 L1108.00 235.00 L1103.00 230.00Z" fill="#C4471F" fill-opacity="1"/><path d="M1105.30 255.91 L1110.30 260.91 L1105.30 265.91 L1100.30 260.91Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M1097.27 285.88 L1102.27 290.88 L1097.27 295.88 L1092.27 290.88Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M1084.15 314.00 L1089.15 319.00 L1084.15 324.00 L1079.15 319.00Z" fill="#C4471F" fill-opacity="1"/><path d="M1066.36 339.42 L1071.36 344.42 L1066.36 349.42 L1061.36 344.42Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M1044.42 361.36 L1049.42 366.36 L1044.42 371.36 L1039.42 366.36Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M1019.00 379.15 L1024.00 384.15 L1019.00 389.15 L1014.00 384.15Z" fill="#C4471F" fill-opacity="1"/><path d="M990.88 392.27 L995.88 397.27 L990.88 402.27 L985.88 397.27Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M960.91 400.30 L965.91 405.30 L960.91 410.30 L955.91 405.30Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M930.00 403.00 L935.00 408.00 L930.00 413.00 L925.00 408.00Z" fill="#C4471F" fill-opacity="1"/><path d="M899.09 400.30 L904.09 405.30 L899.09 410.30 L894.09 405.30Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M869.12 392.27 L874.12 397.27 L869.12 402.27 L864.12 397.27Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M841.00 379.15 L846.00 384.15 L841.00 389.15 L836.00 384.15Z" fill="#C4471F" fill-opacity="1"/><path d="M815.58 361.36 L820.58 366.36 L815.58 371.36 L810.58 366.36Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M793.64 339.42 L798.64 344.42 L793.64 349.42 L788.64 344.42Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M775.85 314.00 L780.85 319.00 L775.85 324.00 L770.85 319.00Z" fill="#C4471F" fill-opacity="1"/><path d="M762.73 285.88 L767.73 290.88 L762.73 295.88 L757.73 290.88Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M754.70 255.91 L759.70 260.91 L754.70 265.91 L749.70 260.91Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M752.00 225.00 L757.00 230.00 L752.00 235.00 L747.00 230.00Z" fill="#C4471F" fill-opacity="1"/><path d="M754.70 194.09 L759.70 199.09 L754.70 204.09 L749.70 199.09Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M762.73 164.12 L767.73 169.12 L762.73 174.12 L757.73 169.12Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M775.85 136.00 L780.85 141.00 L775.85 146.00 L770.85 141.00Z" fill="#C4471F" fill-opacity="1"/><path d="M793.64 110.58 L798.64 115.58 L793.64 120.58 L788.64 115.58Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M815.58 88.64 L820.58 93.64 L815.58 98.64 L810.58 93.64Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M841.00 70.85 L846.00 75.85 L841.00 80.85 L836.00 75.85Z" fill="#C4471F" fill-opacity="1"/><path d="M869.12 57.73 L874.12 62.73 L869.12 67.73 L864.12 62.73Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M899.09 49.70 L904.09 54.70 L899.09 59.70 L894.09 54.70Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M930.00 47.00 L935.00 52.00 L930.00 57.00 L925.00 52.00Z" fill="#C4471F" fill-opacity="1"/><path d="M960.91 49.70 L965.91 54.70 L960.91 59.70 L955.91 54.70Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M990.88 57.73 L995.88 62.73 L990.88 67.73 L985.88 62.73Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M1019.00 70.85 L1024.00 75.85 L1019.00 80.85 L1014.00 75.85Z" fill="#C4471F" fill-opacity="1"/><path d="M1044.42 88.64 L1049.42 93.64 L1044.42 98.64 L1039.42 93.64Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M1066.36 110.58 L1071.36 115.58 L1066.36 120.58 L1061.36 115.58Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M1084.15 136.00 L1089.15 141.00 L1084.15 146.00 L1079.15 141.00Z" fill="#C4471F" fill-opacity="1"/><path d="M1097.27 164.12 L1102.27 169.12 L1097.27 174.12 L1092.27 169.12Z" fill="#B8AD9C" fill-opacity="0.7"/><path d="M1105.30 194.09 L1110.30 199.09 L1105.30 204.09 L1100.30 199.09Z" fill="#B8AD9C" fill-opacity="0.7"/></g>
+  <path class="draw" pathLength="1" d="M991.23 82.18 L1077.82 168.77 L1077.82 291.23 L991.23 377.82 L868.77 377.82 L782.18 291.23 L782.18 168.77 L868.77 82.18 Z" fill="none" stroke="#B8AD9C" stroke-width="1" style="animation-duration:3s"/>
+  <g class="fade" style="animation-delay:1.6s"><path d="M882.00 380.00 L882.00 246.00 A60 60 0 1 1 978.00 246.00 L978.00 380.00 Z" fill="#C4471F" fill-opacity=".10"/></g>
+  <path class="draw" pathLength="1" d="M840.40 380.00 L840.40 277.20 A112 112 0 1 1 1019.60 277.20 L1019.60 380.00" fill="none" stroke="#C4471F" stroke-width="1.8" stroke-linecap="round" style="animation-delay:0.40s;animation-duration:2.6s"/><path class="draw" pathLength="1" d="M861.20 380.00 L861.20 261.60 A86 86 0 1 1 998.80 261.60 L998.80 380.00" fill="none" stroke="#2F3FBF" stroke-width="1.6" stroke-linecap="round" style="animation-delay:0.75s;animation-duration:2.6s"/><path class="draw" pathLength="1" d="M882.00 380.00 L882.00 246.00 A60 60 0 1 1 978.00 246.00 L978.00 380.00" fill="none" stroke="#B07D1C" stroke-width="1.4" stroke-linecap="round" style="animation-delay:1.10s;animation-duration:2.6s"/>
+  <line class="draw" pathLength="1" x1="818" y1="380" x2="1042" y2="380" stroke="#1B1815" stroke-width="1.4" style="animation-delay:.2s;animation-duration:1.2s"/>
+  <g class="fade" style="animation-delay:2.4s"><g class="lantern"><line x1="930" y1="150" x2="930" y2="212" stroke="#1B1815" stroke-width="1"/><path d="M921 214 H939 L943 232 L930 244 L917 232 Z" fill="#B07D1C" fill-opacity=".85" stroke="#1B1815" stroke-width="1"/><circle cx="930" cy="230" r="16" fill="#B07D1C" fill-opacity=".18"/></g></g>
 
-  <!-- Top Telemetry Bar -->
-  <g transform="translate(48, 30)">
-    <rect x="0" y="0" width="338" height="28" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
-    <circle class="pulse" cx="16" cy="14" r="4.5" fill="#059669" />
-    <text x="29" y="18" class="font-mono" font-size="11" font-weight="600" fill="#0F172A" letter-spacing="0.6">AVAILABLE FOR PROJECTS &amp; CONSULTING</text>
+  <!-- left column -->
+  <g class="mono fade" style="animation-delay:.05s" font-size="13" letter-spacing="2.6" fill="#6F675C">
+    <text x="72" y="78">FOUNDER  /  SYSTEMS ENGINEER</text>
+  </g>
+  <line class="draw" pathLength="1" x1="72" y1="96" x2="128" y2="96" stroke="#C4471F" stroke-width="2" style="animation-delay:.1s;animation-duration:1s"/>
 
-    <rect x="350" y="0" width="188" height="28" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
-    <text x="366" y="18" class="font-mono" font-size="11" font-weight="500" fill="#475569">📍 MOROCCO · UTC+1</text>
+  <g clip-path="url(#nameClip)">
+    <text class="serif" x="68" y="208" font-size="122" font-weight="500" letter-spacing="-3" fill="#1B1815">MrZaKaRiA</text>
   </g>
 
-  <!-- Left Column: Identity & Mission -->
-  <g transform="translate(48, 92)">
-    <text x="0" y="0" class="font-mono" font-size="12" font-weight="700" fill="#0D9488" letter-spacing="2.2">FOUNDER · PRINCIPAL FULL-STACK &amp; SYSTEMS ARCHITECT</text>
-    <text x="0" y="54" class="font-sans" font-size="56" font-weight="800" fill="#0F172A" letter-spacing="-1.2">MrZaKaRiA</text>
-    <rect x="308" y="34" width="12" height="12" rx="3" fill="#0D9488" />
-
-    <text x="0" y="92" class="font-sans" font-size="17" font-weight="500" fill="#475569">
-      Building high-craft software from the <tspan fill="#0F172A" font-weight="700">interface</tspan> to the <tspan fill="#0F172A" font-weight="700">bare-metal infrastructure</tspan>.
-    </text>
-    <text x="0" y="118" class="font-sans" font-size="14.5" fill="#475569">
-      Architecting AI-native ERP &amp; CRM platforms, Astro/Vue/React web systems, Apple Silicon
-    </text>
-    <text x="0" y="140" class="font-sans" font-size="14.5" fill="#475569">
-      virtualization (<tspan fill="#0284C7" font-weight="600">LumenVM</tspan>), Suckless Linux distributions (<tspan fill="#0D9488" font-weight="600">AbyssLinux</tspan>), and server tooling.
-    </text>
-
-    <!-- Domain Pillars -->
-    <g transform="translate(0, 166)">
-      <rect x="0" y="0" width="148" height="32" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" />
-      <text x="14" y="20" class="font-mono" font-size="11.5" font-weight="600" fill="#0D9488">⚡ Web &amp; Astro 7</text>
-
-      <rect x="158" y="0" width="166" height="32" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" />
-      <text x="172" y="20" class="font-mono" font-size="11.5" font-weight="600" fill="#0284C7">🏢 AI ERP &amp; CRM OS</text>
-
-      <rect x="334" y="0" width="174" height="32" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" />
-      <text x="348" y="20" class="font-mono" font-size="11.5" font-weight="600" fill="#4F46E5">🍎 Swift &amp; Tauri v2</text>
-
-      <rect x="518" y="0" width="174" height="32" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" />
-      <text x="532" y="20" class="font-mono" font-size="11.5" font-weight="600" fill="#D97706">🐧 Linux &amp; Docker</text>
-    </g>
+  <g class="serif rise" style="animation-delay:1.1s" font-size="25" fill="#6F675C" font-style="italic">
+    <text x="72" y="256">I build business software, operating systems,</text>
+    <text x="72" y="288">and the servers they run on.</text>
   </g>
 
-  <!-- Right Column: Live Interactive Terminal Card -->
-  <g class="float-card" transform="translate(765, 32)">
-    <rect x="0" y="0" width="390" height="276" rx="14" fill="#0F172A" stroke="#0D9488" stroke-width="1.3" stroke-opacity="0.7" />
-    <path d="M 0 14 Q 0 0 14 0 L 376 0 Q 390 0 390 14 L 390 36 L 0 36 Z" fill="#1E293B" />
-    <circle cx="20" cy="18" r="5.5" fill="#F43F5E" />
-    <circle cx="38" cy="18" r="5.5" fill="#F59E0B" />
-    <circle cx="56" cy="18" r="5.5" fill="#10B981" />
-    <text x="195" y="22" text-anchor="middle" class="font-mono" font-size="11" fill="#94A3B8">mrzakaria@abyss-macos ~ zsh</text>
+  <g class="mono" font-size="18">
+    <text class="fade" style="animation-delay:1.7s" x="72" y="330" fill="#C4471F">$</text>
+    <g clip-path="url(#typeClip)"><text x="96" y="330" fill="#1B1815">ship --from morocco --to everywhere</text></g>
+    <rect class="cursor" x="479.4" y="315" width="10" height="20" fill="#C4471F" opacity=".9"/>
+  </g>
 
-    <g transform="translate(20, 58)" class="font-mono" font-size="12">
-      <text x="0" y="0" fill="#2DD4BF">❯ <tspan fill="#F8FAFC" font-weight="600">sysinfo --architect MrZaKaRiA</tspan></text>
-
-      <text x="0" y="26" fill="#64748B">├─</text>
-      <text x="22" y="26" fill="#94A3B8">venture    :</text>
-      <text x="116" y="26" fill="#38BDF8" font-weight="600">mrzakaria.com · RAIN STUDIO</text>
-
-      <text x="0" y="48" fill="#64748B">├─</text>
-      <text x="22" y="48" fill="#94A3B8">flagships  :</text>
-      <text x="116" y="48" fill="#F8FAFC">RIVER ERP · LumenVM · Abyss</text>
-
-      <text x="0" y="70" fill="#64748B">├─</text>
-      <text x="22" y="70" fill="#94A3B8">daily_os   :</text>
-      <text x="116" y="70" fill="#14B8A6">macOS ARM64 · VoidLinux + dwm</text>
-
-      <text x="0" y="92" fill="#64748B">├─</text>
-      <text x="22" y="92" fill="#94A3B8">production :</text>
-      <text x="116" y="92" fill="#F59E0B">Debian · Docker · Webmin</text>
-
-      <text x="0" y="114" fill="#64748B">├─</text>
-      <text x="22" y="114" fill="#94A3B8">codebase   :</text>
-      <text x="116" y="114" fill="#A78BFA">88.9 MB across 61 Original Repos</text>
-
-      <text x="0" y="136" fill="#64748B">└─</text>
-      <text x="22" y="136" fill="#94A3B8">velocity   :</text>
-      <text x="116" y="136" fill="#10B981" font-weight="700">2,972 commits/yr (3,433+ total)</text>
-
-      <line x1="0" y1="156" x2="350" y2="156" stroke="#1E293B" stroke-width="1" />
-
-      <text x="0" y="178" fill="#2DD4BF">❯ <tspan fill="#F8FAFC">status --check</tspan></text>
-      <text x="0" y="200" fill="#10B981">✔ All systems operational · Shipping daily</text>
-      <rect class="cursor" x="308" y="189" width="8" height="14" fill="#2DD4BF" />
-    </g>
+  <g class="mono fade" style="animation-delay:2.6s" font-size="12.5" letter-spacing="1.6" fill="#6F675C">
+    <line x1="72" y1="384" x2="632" y2="384" stroke="#DED3C2"/>
+    <text x="72" y="412">31°47′N  7°05′W</text>
+    <text x="252" y="412">MOROCCO</text>
+    <text x="372" y="412"><tspan fill="#1B1815">3,175</tspan> CONTRIBUTIONS / YR</text>
   </g>
 </svg>

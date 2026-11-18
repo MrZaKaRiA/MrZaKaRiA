@@ -1,70 +1,78 @@
 {
-  "updated_at": "2026-11-02 11:19 UTC",
-  "followers": 14,
-  "owned_repos": 61,
+  "updated_at": "2026-11-18 20:18 UTC",
+  "followers": 16,
+  "owned_repos": 63,
   "public_repos_total": 650,
-  "total_stars": 25,
-  "total_forks": 9,
-  "annual_contributions": 2972,
-  "lifetime_contributions": 3433,
+  "total_stars": 31,
+  "total_forks": 10,
+  "annual_contributions": 3175,
+  "lifetime_contributions": 3638,
   "max_daily_contributions": 131,
-  "active_days_year": 197,
+  "active_days_year": 210,
   "languages": {
-    "Rust": 245978,
-    "HTML": 5544740,
-    "JavaScript": 9730318,
-    "PHP": 44967441,
-    "TypeScript": 5301062,
-    "Blade": 1456678,
-    "SCSS": 617644,
-    "Shell": 689694,
-    "Python": 302491,
-    "Go Template": 45282,
-    "Makefile": 51762,
-    "Vue": 19102118,
+    "Shell": 1005860,
+    "Python": 622630,
+    "C": 368328,
+    "CSS": 2350732,
+    "HTML": 10669870,
+    "TypeScript": 5373977,
+    "PHP": 48581911,
+    "Vue": 19796847,
+    "JavaScript": 10416007,
+    "Blade": 1558615,
     "Swift": 874526,
-    "CSS": 2049363,
+    "Makefile": 52113,
     "Kotlin": 15153,
-    "Astro": 2691021,
-    "Objective-C": 35552,
-    "C": 324097,
     "Roff": 19377,
     "HCL": 3611,
-    "Vim Script": 921,
+    "Vim Script": 1340,
     "Dockerfile": 356,
-    "Perl": 350648,
-    "Raku": 2282,
+    "Perl": 358043,
+    "Rust": 352367,
+    "Inno Setup": 3958,
+    "Batchfile": 55,
+    "Astro": 2739281,
+    "SCSS": 629726,
+    "Go Template": 46205,
+    "Raku": 1875,
+    "Objective-C": 35552,
     "PLpgSQL": 103825,
     "MDX": 44185,
     "PowerShell": 570,
     "Solidity": 10471
   },
   "yearly_contributions": {
-    "2020": 64,
+    "2020": 62,
     "2021": 20,
     "2022": 21,
     "2023": 40,
     "2024": 102,
     "2025": 285,
-    "2026": 2901
+    "2026": 3108
   },
   "repos": {
-    "NetSentinel": {
-      "stars": 0,
+    "AbyssLinuxPMR": {
+      "stars": 1,
       "forks": 0,
-      "description": "Net Sentinel",
-      "lang": "Rust"
+      "description": "AbyssLinux Package Manager Repo",
+      "lang": "Shell"
     },
     "MrZaKaRiA": {
       "stars": 1,
       "forks": 0,
-      "description": "Config files for my GitHub profile.",
-      "lang": ""
+      "description": "Principal Full-Stack, AI-Native ERP/CRM & Systems Architecture Profile \u2014 Custom animated SVGs & live GraphQL telemetry engine.",
+      "lang": "Python"
     },
-    "mrzakariacom": {
+    "claude-api-proxy": {
       "stars": 0,
-      "forks": 1,
-      "description": "This is my beautiful MrZaKaRiA website made with love in 2023 and updated throughout 2024 and 2025",
+      "forks": 0,
+      "description": "",
+      "lang": "TypeScript"
+    },
+    "river": {
+      "stars": 0,
+      "forks": 0,
+      "description": "RIVER ERP \u2014 AI-native ERP & CRM for Morocco and Europe: documents, DGI e-invoicing, POS, stock, treasury, payroll and a live view of the whole business. Laravel 13 \u00b7 Vue 3 \u00b7 Tailwind v4.",
       "lang": "PHP"
     },
     "rain": {
@@ -72,6 +80,60 @@
       "forks": 0,
       "description": "Rain Online Store",
       "lang": "PHP"
+    },
+    "AbyssLinux": {
+      "stars": 8,
+      "forks": 2,
+      "description": "AbyssLinux \u2014 A Suckless-inspired minimalist rolling-release Linux operating system powered by Void Linux, runit, dwm, st & dmenu (x86_64 & Apple Silicon).",
+      "lang": "Shell"
+    },
+    "Virtualmin-Db-Backup": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Hardened Webmin/Virtualmin module to back up MySQL, MariaDB, PostgreSQL, MongoDB & SQLite (host or Docker) \u2014 compression, encryption, checksums, cloud upload (S3/Dropbox/Drive) and scheduling.",
+      "lang": "Perl"
+    },
+    "NetSentinel": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Net Sentinel",
+      "lang": "Rust"
+    },
+    "originelementwebsite": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Origin \u039element \u2014 independent AI integration consultancy website built with Astro, with services, case studies and guides.",
+      "lang": "Astro"
+    },
+    "origin-server": {
+      "stars": 0,
+      "forks": 0,
+      "description": "Hosting storefront and database-free server request configurator built with React, Vite, Motion, and PHP/PHPMailer.",
+      "lang": "JavaScript"
+    },
+    "mrzakaria-demo": {
+      "stars": 0,
+      "forks": 0,
+      "description": "",
+      "lang": "HTML"
+    },
+    "mstravaux": {
+      "stars": 0,
+      "forks": 0,
+      "description": "MSTRAVAUX Website",
+      "lang": "CSS"
+    },
+    "mrzakariacom": {
+      "stars": 0,
+      "forks": 1,
+      "description": "This is my beautiful MrZaKaRiA website made with love in 2023 and updated throughout 2024 and 2025",
+      "lang": "PHP"
+    },
+    "Virtualmin-Docker": {
+      "stars": 9,
+      "forks": 4,
+      "description": "Security-hardened Webmin & Virtualmin module for orchestrating Docker containers, images, volumes, networks, and live logs from the browser.",
+      "lang": "Perl"
     },
     "smartott": {
       "stars": 0,
@@ -115,24 +177,6 @@
       "description": "",
       "lang": "TypeScript"
     },
-    "AbyssLinux": {
-      "stars": 3,
-      "forks": 1,
-      "description": "The Suckless Linux Operating System",
-      "lang": "Shell"
-    },
-    "river": {
-      "stars": 0,
-      "forks": 0,
-      "description": "RIVER ERP \u2014 AI-native ERP & CRM for Morocco and Europe: documents, DGI e-invoicing, POS, stock, treasury, payroll and a live view of the whole business. Laravel 13 \u00b7 Vue 3 \u00b7 Tailwind v4.",
-      "lang": "PHP"
-    },
-    "AbyssLinuxPMR": {
-      "stars": 0,
-      "forks": 0,
-      "description": "AbyssLinux Package Manager Repo",
-      "lang": "CSS"
-    },
     "pods": {
       "stars": 0,
       "forks": 0,
@@ -151,22 +195,10 @@
       "description": "Native SwiftUI virtual-machine manager for Apple Silicon with Apple Virtualization & QEMU, Windows ARM setup bypass, Linux catalog, ISO detection, and host safeguards",
       "lang": "Swift"
     },
-    "Virtualmin-Docker": {
-      "stars": 9,
-      "forks": 4,
-      "description": "Webmin Virtualmin Docker",
-      "lang": "Perl"
-    },
     "mfieldmea": {
       "stars": 0,
       "forks": 0,
       "description": "Website for MField & Data Insight \u2014 fieldwork & data-processing agency in Casablanca serving Morocco & MEA. Astro 5 static site \u00b7 light/dark design system \u00b7 Framer Motion-style animation \u00b7 SEO-first \u00b7 v27.1.1",
-      "lang": "Astro"
-    },
-    "mrzakaria-demo": {
-      "stars": 0,
-      "forks": 0,
-      "description": "",
       "lang": "Astro"
     },
     "rain-studio-templates": {
@@ -205,12 +237,6 @@
       "description": "",
       "lang": "Astro"
     },
-    "origin-element": {
-      "stars": 0,
-      "forks": 0,
-      "description": "Origin \u039element \u2014 independent AI integration consultancy website built with Astro, with services, case studies and guides.",
-      "lang": "Astro"
-    },
     "rain-school": {
       "stars": 0,
       "forks": 0,
@@ -221,12 +247,6 @@
       "stars": 0,
       "forks": 0,
       "description": "Website for shi (Smart High IT): networks, cabling, CCTV & access control, servers & backup, VoIP, solar and IT hardware across Morocco. Astro 7 \u00b7 React 19 \u00b7 Framer Motion \u00b7 static Apache deploy.",
-      "lang": "JavaScript"
-    },
-    "origin-server": {
-      "stars": 0,
-      "forks": 0,
-      "description": "Hosting storefront and database-free server request configurator built with React, Vite, Motion, and PHP/PHPMailer.",
       "lang": "JavaScript"
     },
     "panolux": {
@@ -274,20 +294,14 @@
     "Virtualmin-File-Backup": {
       "stars": 0,
       "forks": 0,
-      "description": "Full Virtualmin Webmin Public_html Backup",
+      "description": "Automated Webmin & Virtualmin module for full public_html and virtual-server archive backups on Linux hosts.",
       "lang": "Perl"
     },
     "ps1": {
       "stars": 0,
       "forks": 0,
-      "description": "PS1 Linux/macOS Terminal Customization",
+      "description": "Zero-latency Linux & macOS terminal prompt (PS1) customization for local workstations and SSH servers.",
       "lang": "Shell"
-    },
-    "Virtualmin-Db-Backup": {
-      "stars": 0,
-      "forks": 0,
-      "description": "Hardened Webmin/Virtualmin module to back up MySQL, MariaDB, PostgreSQL, MongoDB & SQLite (host or Docker) \u2014 compression, encryption, checksums, cloud upload (S3/Dropbox/Drive) and scheduling.",
-      "lang": "Perl"
     },
     "rain-desktop": {
       "stars": 0,
@@ -417,70 +431,6 @@
     }
   },
   "weeks": [
-    {
-      "contributionDays": [
-        {
-          "contributionCount": 0,
-          "date": "2025-11-02"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-03"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-04"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-05"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-06"
-        },
-        {
-          "contributionCount": 4,
-          "date": "2025-11-07"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-08"
-        }
-      ]
-    },
-    {
-      "contributionDays": [
-        {
-          "contributionCount": 0,
-          "date": "2025-11-09"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-10"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-11"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-12"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-13"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-14"
-        },
-        {
-          "contributionCount": 0,
-          "date": "2025-11-15"
-        }
-      ]
-    },
     {
       "contributionDays": [
         {
@@ -1496,11 +1446,11 @@
           "date": "2026-06-25"
         },
         {
-          "contributionCount": 5,
+          "contributionCount": 1,
           "date": "2026-06-26"
         },
         {
-          "contributionCount": 7,
+          "contributionCount": 4,
           "date": "2026-06-27"
         }
       ]
@@ -1508,7 +1458,7 @@
     {
       "contributionDays": [
         {
-          "contributionCount": 12,
+          "contributionCount": 8,
           "date": "2026-06-28"
         },
         {
@@ -1516,11 +1466,11 @@
           "date": "2026-06-29"
         },
         {
-          "contributionCount": 1,
+          "contributionCount": 0,
           "date": "2026-06-30"
         },
         {
-          "contributionCount": 4,
+          "contributionCount": 0,
           "date": "2026-07-01"
         },
         {
@@ -1972,11 +1922,11 @@
           "date": "2026-10-07"
         },
         {
-          "contributionCount": 28,
+          "contributionCount": 29,
           "date": "2026-10-08"
         },
         {
-          "contributionCount": 27,
+          "contributionCount": 26,
           "date": "2026-10-09"
         },
         {
@@ -2024,11 +1974,11 @@
           "date": "2026-10-18"
         },
         {
-          "contributionCount": 35,
+          "contributionCount": 37,
           "date": "2026-10-19"
         },
         {
-          "contributionCount": 53,
+          "contributionCount": 51,
           "date": "2026-10-20"
         },
         {
@@ -2088,8 +2038,80 @@
           "date": "2026-11-01"
         },
         {
-          "contributionCount": 3,
+          "contributionCount": 5,
           "date": "2026-11-02"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-11-03"
+        },
+        {
+          "contributionCount": 7,
+          "date": "2026-11-04"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-11-05"
+        },
+        {
+          "contributionCount": 8,
+          "date": "2026-11-06"
+        },
+        {
+          "contributionCount": 16,
+          "date": "2026-11-07"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 17,
+          "date": "2026-11-08"
+        },
+        {
+          "contributionCount": 9,
+          "date": "2026-11-09"
+        },
+        {
+          "contributionCount": 32,
+          "date": "2026-11-10"
+        },
+        {
+          "contributionCount": 9,
+          "date": "2026-11-11"
+        },
+        {
+          "contributionCount": 3,
+          "date": "2026-11-12"
+        },
+        {
+          "contributionCount": 17,
+          "date": "2026-11-13"
+        },
+        {
+          "contributionCount": 6,
+          "date": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "contributionCount": 3,
+          "date": "2026-11-15"
+        },
+        {
+          "contributionCount": 14,
+          "date": "2026-11-16"
+        },
+        {
+          "contributionCount": 51,
+          "date": "2026-11-17"
+        },
+        {
+          "contributionCount": 16,
+          "date": "2026-11-18"
         }
       ]
     }

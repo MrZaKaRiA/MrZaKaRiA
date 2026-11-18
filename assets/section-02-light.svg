@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 84" width="1200" height="84" role="img" aria-label="The last twelve months">
+  <style>
+    .serif { font-family: 'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif; }
+    .mono { font-family: ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace; }
+    .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.65,0,.35,1) forwards; }
+    .fade { opacity: 0; animation: fade 1.2s ease forwards; }
+    .rise { opacity: 0; animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinr { to { transform: rotate(-360deg); } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes breathe { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+    @keyframes sway { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
+    }</style>
+  <text class="mono" x="40" y="52" font-size="15" letter-spacing="2" fill="#C4471F">§ 02</text>
+  <path d="M110.80 56.00 L110.80 45.40 A9 9 0 1 1 125.20 45.40 L125.20 56.00" fill="none" stroke="#C4471F" stroke-width="1.4" stroke-linecap="round"/>
+  <text class="serif" x="148" y="56" font-size="34" fill="#1B1815">The last twelve months</text>
+  <line class="draw" pathLength="1" x1="563" y1="47" x2="934" y2="47" stroke="#DED3C2" stroke-width="1"/>
+  <text class="mono" x="1160" y="52" text-anchor="end" font-size="13" letter-spacing="1.8" fill="#6F675C">LIVE, SYNCED TWICE A DAY</text>
+</svg>

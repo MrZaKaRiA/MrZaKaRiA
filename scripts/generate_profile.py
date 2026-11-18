@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MrZaKaRiA GitHub Profile SVG & Telemetry Generator
+MrZaKaRiA profile renderer — "Zellige" design system
 Generates dark/light adaptive, animated SVG visualizations from live GitHub GraphQL data.
 """
 
@@ -195,703 +195,473 @@ def fetch_github_data() -> dict[str, Any]:
     return result
 
 
-def get_theme(mode: str) -> dict[str, str]:
-    if mode == "dark":
-        return {
-            "bg_start": "#060B14",
-            "bg_mid": "#0B1325",
-            "bg_end": "#091926",
-            "card_bg": "#0F172A",
-            "card_bg_alt": "#111C33",
-            "card_border": "#1E293B",
-            "card_border_glow": "#0D9488",
-            "grid_line": "#1E293B",
-            "text_primary": "#F8FAFC",
-            "text_secondary": "#94A3B8",
-            "text_muted": "#64748B",
-            "accent_teal": "#14B8A6",
-            "accent_cyan": "#38BDF8",
-            "accent_indigo": "#818CF8",
-            "accent_amber": "#F59E0B",
-            "accent_emerald": "#10B981",
-            "accent_rose": "#F43F5E",
-            "pill_bg": "#132238",
-            "pill_border": "#23395B",
-            "term_bg": "#070B12",
-            "term_header": "#111827",
-            "heat_0": "#161F30",
-            "heat_1": "#115E59",
-            "heat_2": "#0D9488",
-            "heat_3": "#14B8A6",
-            "heat_4": "#2DD4BF",
-        }
-    return {
-        "bg_start": "#F8FAFC",
-        "bg_mid": "#F1F5F9",
-        "bg_end": "#ECFEFF",
-        "card_bg": "#FFFFFF",
-        "card_bg_alt": "#F8FAFC",
-        "card_border": "#E2E8F0",
-        "card_border_glow": "#0D9488",
-        "grid_line": "#E2E8F0",
-        "text_primary": "#0F172A",
-        "text_secondary": "#475569",
-        "text_muted": "#64748B",
-        "accent_teal": "#0D9488",
-        "accent_cyan": "#0284C7",
-        "accent_indigo": "#4F46E5",
-        "accent_amber": "#D97706",
-        "accent_emerald": "#059669",
-        "accent_rose": "#E11D48",
-        "pill_bg": "#F1F5F9",
-        "pill_border": "#CBD5E1",
-        "term_bg": "#0F172A",
-        "term_header": "#1E293B",
-        "heat_0": "#E2E8F0",
-        "heat_1": "#99F6E4",
-        "heat_2": "#2DD4BF",
-        "heat_3": "#0D9488",
-        "heat_4": "#115E59",
-    }
 
 
-def generate_hero_svg(data: dict[str, Any], mode: str) -> str:
-    t = get_theme(mode)
-    lifetime = f"{data['lifetime_contributions']:,}+"
-    annual = f"{data['annual_contributions']:,}"
-    owned = data["owned_repos"]
+# ════════════════════════════════════════════════════════════════════════════
+#  DESIGN SYSTEM — "Zellige"
+#  Warm ink & paper, terracotta + Majorelle blue, editorial serif + mono.
+#  Motifs: Moroccan horseshoe arches, diamond tile lattices, line icons.
+#  No star shapes anywhere, by design.
+# ════════════════════════════════════════════════════════════════════════════
 
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
-  <defs>
-    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{t['bg_start']}" />
-      <stop offset="55%" stop-color="{t['bg_mid']}" />
-      <stop offset="100%" stop-color="{t['bg_end']}" />
-    </linearGradient>
-    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="{t['accent_teal']}" />
-      <stop offset="50%" stop-color="{t['accent_cyan']}" />
-      <stop offset="100%" stop-color="{t['accent_indigo']}" />
-    </linearGradient>
-    <radialGradient id="orbTeal" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="{t['accent_teal']}" stop-opacity="0.18" />
-      <stop offset="100%" stop-color="{t['accent_teal']}" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="orbCyan" cx="85%" cy="75%" r="45%">
-      <stop offset="0%" stop-color="{t['accent_cyan']}" stop-opacity="0.16" />
-      <stop offset="100%" stop-color="{t['accent_cyan']}" stop-opacity="0" />
-    </radialGradient>
-    <pattern id="blueprintGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="{t['grid_line']}" stroke-width="0.7" stroke-opacity="0.45" />
-    </pattern>
-  </defs>
+import math
 
-  <style>
-    .font-sans {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }}
-    .font-mono {{ font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }}
-    @keyframes pulseDot {{
-      0%, 100% {{ opacity: 1; transform: scale(1); }}
-      50% {{ opacity: 0.45; transform: scale(1.35); }}
-    }}
-    @keyframes scanline {{
-      0% {{ transform: translateX(-200px); opacity: 0; }}
-      50% {{ opacity: 0.9; }}
-      100% {{ transform: translateX(1200px); opacity: 0; }}
-    }}
-    @keyframes blinkCursor {{
-      0%, 49% {{ opacity: 1; }}
-      50%, 100% {{ opacity: 0; }}
-    }}
-    @keyframes floatSlow {{
-      0%, 100% {{ transform: translateY(0px); }}
-      50% {{ transform: translateY(-4px); }}
-    }}
-    .pulse {{ animation: pulseDot 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }}
-    .cursor {{ animation: blinkCursor 1.1s infinite; }}
-    .scan {{ animation: scanline 7s ease-in-out infinite; }}
-    .float-card {{ animation: floatSlow 5s ease-in-out infinite; }}
-  </style>
+SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif"
+MONO = "ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
 
-  <!-- Background Canvas -->
-  <rect width="1200" height="340" rx="20" fill="url(#heroBg)" stroke="{t['card_border']}" stroke-width="1.5" />
-  <rect width="1200" height="340" rx="20" fill="url(#blueprintGrid)" />
-  <rect width="1200" height="340" rx="20" fill="url(#orbTeal)" />
-  <rect width="1200" height="340" rx="20" fill="url(#orbCyan)" />
+THEMES = {
+    "dark": {
+        "bg": "#0C0B0A", "panel": "#12100E", "ink": "#EFE8DC", "muted": "#8C8377",
+        "faint": "#4A443D", "line": "#26221E", "accent": "#E2603B",
+        "blue": "#5867E8", "ochre": "#D9A441", "empty": "#1C1916",
+    },
+    "light": {
+        "bg": "#F5EFE4", "panel": "#FBF7F0", "ink": "#1B1815", "muted": "#6F675C",
+        "faint": "#B8AD9C", "line": "#DED3C2", "accent": "#C4471F",
+        "blue": "#2F3FBF", "ochre": "#B07D1C", "empty": "#E9E0D1",
+    },
+}
 
-  <!-- Top Animated Laser Accent Line -->
-  <rect x="40" y="1" width="1120" height="2" fill="url(#brandGrad)" opacity="0.45" />
-  <rect class="scan" x="0" y="0" width="220" height="3" fill="url(#brandGrad)" rx="1.5" />
+# Line icons in local coordinates, centred on (0, 0), fitting a ~48px radius.
+# Each entry: (path d, role) — role "fill" paths get the panel colour to occlude what's behind.
+ICONS = {
+    "windows": [  # stacked VM windows with a play glyph
+        ("M-44 -30 H18 V12 H-44 Z", "line"), ("M-44 -20 H18", "line"),
+        ("M-24 -12 H44 V32 H-24 Z", "fill"), ("M-24 -2 H44", "line"),
+        ("M4 7 L19 15 L4 23 Z", "accent"),
+    ],
+    "terminal": [
+        ("M-46 -32 H46 V32 H-46 Z", "line"), ("M-46 -20 H46", "line"),
+        ("M-32 -6 L-20 4 L-32 14", "accent"), ("M-12 16 H10", "accent"),
+    ],
+    "river": [
+        ("M-46 -18 q11.5 -12 23 0 t23 0 t23 0 t23 0", "line"),
+        ("M-46 0 q11.5 -12 23 0 t23 0 t23 0 t23 0", "accent"),
+        ("M-46 18 q11.5 -12 23 0 t23 0 t23 0 t23 0", "line"),
+    ],
+    "containers": [
+        ("M-40 6 H-4 V30 H-40 Z", "line"), ("M-28 6 V30 M-16 6 V30", "line"),
+        ("M4 6 H40 V30 H4 Z", "line"), ("M16 6 V30 M28 6 V30", "line"),
+        ("M-18 -22 H18 V2 H-18 Z", "accent"), ("M-6 -22 V2 M6 -22 V2", "accent"),
+    ],
+    "cloud": [
+        ("M-30 6 A14 14 0 0 1 -22 -20 A18 18 0 0 1 12 -28 A13 13 0 0 1 30 6 Z", "line"),
+        ("M-16 18 l-5 12 M0 18 l-5 12 M16 18 l-5 12", "accent"),
+    ],
+    "database": [
+        ("M-34 -26 a34 10 0 1 0 68 0 a34 10 0 1 0 -68 0", "line"),
+        ("M-34 -26 V30 a34 10 0 0 0 68 0 V-26", "line"),
+        ("M-34 -6 a34 10 0 0 0 68 0", "accent"), ("M-34 12 a34 10 0 0 0 68 0", "accent"),
+    ],
+}
 
-  <!-- Top Telemetry Bar -->
-  <g transform="translate(48, 30)">
-    <rect x="0" y="0" width="338" height="28" rx="14" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-    <circle class="pulse" cx="16" cy="14" r="4.5" fill="{t['accent_emerald']}" />
-    <text x="29" y="18" class="font-mono" font-size="11" font-weight="600" fill="{t['text_primary']}" letter-spacing="0.6">AVAILABLE FOR PROJECTS &amp; CONSULTING</text>
-
-    <rect x="350" y="0" width="188" height="28" rx="14" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-    <text x="366" y="18" class="font-mono" font-size="11" font-weight="500" fill="{t['text_secondary']}">📍 MOROCCO · UTC+1</text>
-  </g>
-
-  <!-- Left Column: Identity & Mission -->
-  <g transform="translate(48, 92)">
-    <text x="0" y="0" class="font-mono" font-size="12" font-weight="700" fill="{t['accent_teal']}" letter-spacing="2.2">FOUNDER · PRINCIPAL FULL-STACK &amp; SYSTEMS ARCHITECT</text>
-    <text x="0" y="54" class="font-sans" font-size="56" font-weight="800" fill="{t['text_primary']}" letter-spacing="-1.2">MrZaKaRiA</text>
-    <rect x="308" y="34" width="12" height="12" rx="3" fill="{t['accent_teal']}" />
-
-    <text x="0" y="92" class="font-sans" font-size="17" font-weight="500" fill="{t['text_secondary']}">
-      Building high-craft software from the <tspan fill="{t['text_primary']}" font-weight="700">interface</tspan> to the <tspan fill="{t['text_primary']}" font-weight="700">bare-metal infrastructure</tspan>.
-    </text>
-    <text x="0" y="118" class="font-sans" font-size="14.5" fill="{t['text_secondary']}">
-      Architecting AI-native ERP &amp; CRM platforms, Astro/Vue/React web systems, Apple Silicon
-    </text>
-    <text x="0" y="140" class="font-sans" font-size="14.5" fill="{t['text_secondary']}">
-      virtualization (<tspan fill="{t['accent_cyan']}" font-weight="600">LumenVM</tspan>), Suckless Linux distributions (<tspan fill="{t['accent_teal']}" font-weight="600">AbyssLinux</tspan>), and server tooling.
-    </text>
-
-    <!-- Domain Pillars -->
-    <g transform="translate(0, 166)">
-      <rect x="0" y="0" width="148" height="32" rx="8" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.2" />
-      <text x="14" y="20" class="font-mono" font-size="11.5" font-weight="600" fill="{t['accent_teal']}">⚡ Web &amp; Astro 7</text>
-
-      <rect x="158" y="0" width="166" height="32" rx="8" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.2" />
-      <text x="172" y="20" class="font-mono" font-size="11.5" font-weight="600" fill="{t['accent_cyan']}">🏢 AI ERP &amp; CRM OS</text>
-
-      <rect x="334" y="0" width="174" height="32" rx="8" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.2" />
-      <text x="348" y="20" class="font-mono" font-size="11.5" font-weight="600" fill="{t['accent_indigo']}">🍎 Swift &amp; Tauri v2</text>
-
-      <rect x="518" y="0" width="174" height="32" rx="8" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.2" />
-      <text x="532" y="20" class="font-mono" font-size="11.5" font-weight="600" fill="{t['accent_amber']}">🐧 Linux &amp; Docker</text>
-    </g>
-  </g>
-
-  <!-- Right Column: Live Interactive Terminal Card -->
-  <g class="float-card" transform="translate(765, 32)">
-    <rect x="0" y="0" width="390" height="276" rx="14" fill="{t['term_bg']}" stroke="{t['card_border_glow']}" stroke-width="1.3" stroke-opacity="0.7" />
-    <path d="M 0 14 Q 0 0 14 0 L 376 0 Q 390 0 390 14 L 390 36 L 0 36 Z" fill="{t['term_header']}" />
-    <circle cx="20" cy="18" r="5.5" fill="#F43F5E" />
-    <circle cx="38" cy="18" r="5.5" fill="#F59E0B" />
-    <circle cx="56" cy="18" r="5.5" fill="#10B981" />
-    <text x="195" y="22" text-anchor="middle" class="font-mono" font-size="11" fill="#94A3B8">mrzakaria@abyss-macos ~ zsh</text>
-
-    <g transform="translate(20, 58)" class="font-mono" font-size="12">
-      <text x="0" y="0" fill="#2DD4BF">❯ <tspan fill="#F8FAFC" font-weight="600">sysinfo --architect MrZaKaRiA</tspan></text>
-
-      <text x="0" y="26" fill="#64748B">├─</text>
-      <text x="22" y="26" fill="#94A3B8">venture    :</text>
-      <text x="116" y="26" fill="#38BDF8" font-weight="600">mrzakaria.com · RAIN STUDIO</text>
-
-      <text x="0" y="48" fill="#64748B">├─</text>
-      <text x="22" y="48" fill="#94A3B8">flagships  :</text>
-      <text x="116" y="48" fill="#F8FAFC">RIVER ERP · LumenVM · Abyss</text>
-
-      <text x="0" y="70" fill="#64748B">├─</text>
-      <text x="22" y="70" fill="#94A3B8">daily_os   :</text>
-      <text x="116" y="70" fill="#14B8A6">macOS ARM64 · VoidLinux + dwm</text>
-
-      <text x="0" y="92" fill="#64748B">├─</text>
-      <text x="22" y="92" fill="#94A3B8">production :</text>
-      <text x="116" y="92" fill="#F59E0B">Debian · Docker · Webmin</text>
-
-      <text x="0" y="114" fill="#64748B">├─</text>
-      <text x="22" y="114" fill="#94A3B8">codebase   :</text>
-      <text x="116" y="114" fill="#A78BFA">88.9 MB across {owned} Original Repos</text>
-
-      <text x="0" y="136" fill="#64748B">└─</text>
-      <text x="22" y="136" fill="#94A3B8">velocity   :</text>
-      <text x="116" y="136" fill="#10B981" font-weight="700">{annual} commits/yr ({lifetime} total)</text>
-
-      <line x1="0" y1="156" x2="350" y2="156" stroke="#1E293B" stroke-width="1" />
-
-      <text x="0" y="178" fill="#2DD4BF">❯ <tspan fill="#F8FAFC">status --check</tspan></text>
-      <text x="0" y="200" fill="#10B981">✔ All systems operational · Shipping daily</text>
-      <rect class="cursor" x="308" y="189" width="8" height="14" fill="#2DD4BF" />
-    </g>
-  </g>
-</svg>
-"""
+PROJECTS = [
+    {
+        "slug": "lumenvm", "repo": "LumenVM", "name": "LumenVM", "kind": "Hypervisor UI",
+        "lines": ["A native SwiftUI virtual machine manager", "for Apple Silicon. macOS, Linux and", "Windows ARM64, with sparse disks."],
+        "stack": "Swift · SwiftUI · Virtualization.framework", "icon": "windows",
+    },
+    {
+        "slug": "abysslinux", "repo": "AbyssLinux", "name": "AbyssLinux", "kind": "Operating system",
+        "lines": ["A suckless, rolling-release Linux", "distribution on Void and runit, with", "dwm, st and dmenu. x86_64 and aarch64."],
+        "stack": "C · Shell · xbps · runit", "icon": "terminal",
+    },
+    {
+        "slug": "river", "repo": "river-desktop", "name": "RIVER ERP", "kind": "Business OS",
+        "lines": ["Self-hosted ERP and CRM for Morocco", "and the EU: DGI e-invoicing, POS,", "stock, treasury and payroll."],
+        "stack": "Rust · Tauri v2 · Laravel · Vue 3", "icon": "river",
+    },
+    {
+        "slug": "virtualmin-docker", "repo": "Virtualmin-Docker", "name": "Virtualmin Docker", "kind": "Server tooling",
+        "lines": ["Containers, images, volumes, networks", "and live logs, orchestrated from", "Webmin. Security-hardened."],
+        "stack": "Perl · Docker · Webmin", "icon": "containers",
+    },
+    {
+        "slug": "rain", "repo": "rain-desktop", "name": "RAIN", "kind": "Commerce platform",
+        "lines": ["A complete commerce platform with a", "native desktop launcher for macOS,", "Windows and Linux."],
+        "stack": "Rust · Tauri · PHP · Vue 3", "icon": "cloud",
+    },
+    {
+        "slug": "db-backup", "repo": "Virtualmin-Db-Backup", "name": "Db Backup", "kind": "Disaster recovery",
+        "lines": ["MySQL, Postgres, MongoDB and SQLite", "backups, host or Docker. Encrypted,", "checksummed, shipped off-site."],
+        "stack": "Perl · Webmin · S3 · rclone", "icon": "database",
+    },
+]
 
 
-def generate_telemetry_svg(data: dict[str, Any], mode: str) -> str:
-    t = get_theme(mode)
-
-    # Compute language distribution from top original codebases
-    raw_langs: dict[str, int] = data.get("languages", {})
-    grouped = {
-        "PHP · Laravel · Blade": raw_langs.get("PHP", 0) + raw_langs.get("Blade", 0),
-        "Vue 3 · Astro · MDX": raw_langs.get("Vue", 0) + raw_langs.get("Astro", 0) + raw_langs.get("MDX", 0),
-        "TypeScript · JavaScript": raw_langs.get("TypeScript", 0) + raw_langs.get("JavaScript", 0),
-        "HTML5 · CSS3 · SCSS": raw_langs.get("HTML", 0) + raw_langs.get("CSS", 0) + raw_langs.get("SCSS", 0),
-        "Swift · SwiftUI (ARM64)": raw_langs.get("Swift", 0),
-        "Systems (Shell · Perl · C · Rust)": (
-            raw_langs.get("Shell", 0)
-            + raw_langs.get("Perl", 0)
-            + raw_langs.get("C", 0)
-            + raw_langs.get("Rust", 0)
-            + raw_langs.get("Python", 0)
-        ),
-    }
-    total_bytes = max(sum(grouped.values()), 1)
-    total_mb = total_bytes / (1024 * 1024)
-
-    lang_colors = [
-        "#818CF8",  # PHP/Laravel
-        "#14B8A6",  # Vue/Astro
-        "#38BDF8",  # TS/JS
-        "#F59E0B",  # HTML/CSS
-        "#F43F5E",  # Swift
-        "#10B981",  # Systems
-    ]
-
-    # Stacked progress bar & rows
-    bar_x = 0.0
-    bar_width = 508.0
-    stacked_rects = []
-    lang_rows = []
-    for idx, (label, size_bytes) in enumerate(grouped.items()):
-        pct = (size_bytes / total_bytes) * 100.0
-        visual_pct = max(pct, 2.5)
-        color = lang_colors[idx]
-        mb_str = f"{size_bytes / (1024 * 1024):.1f} MB" if size_bytes >= 1024 * 1024 else f"{size_bytes / 1024:.0f} KB"
-        row_y = 148 + idx * 38
-        fill_w = max(int((pct / 100.0) * 210), 8)
-        lang_rows.append(
-            f"""
-      <g transform="translate(28, {row_y})">
-        <circle cx="7" cy="-4" r="5" fill="{color}" />
-        <text x="20" y="0" class="font-sans" font-size="13" font-weight="600" fill="{t['text_primary']}">{esc(label)}</text>
-        <text x="275" y="0" text-anchor="end" class="font-mono" font-size="11.5" fill="{t['text_secondary']}">{mb_str}</text>
-        <rect x="290" y="-10" width="160" height="8" rx="4" fill="{t['pill_bg']}" />
-        <rect x="290" y="-10" width="{min(max(int(pct * 1.6), 8), 160)}" height="8" rx="4" fill="{color}" />
-        <text x="508" y="0" text-anchor="end" class="font-mono" font-size="12" font-weight="700" fill="{color}">{pct:.1f}%</text>
-      </g>"""
-        )
-        w_seg = (visual_pct / 106.0) * bar_width
-        stacked_rects.append(
-            f'<rect x="{28 + bar_x:.1f}" y="102" width="{max(w_seg - 2, 3):.1f}" height="12" rx="3" fill="{color}" />'
-        )
-        bar_x += w_seg
-
-    # Build 52-week contribution heatmap grid
-    weeks = data.get("weeks", [])[-52:]
-    heatmap_cells = []
-    weekly_sums = []
-    for w_idx, w in enumerate(weeks):
-        days = w.get("contributionDays", [])
-        w_sum = sum(d.get("contributionCount", 0) for d in days)
-        weekly_sums.append(w_sum)
-        for d_idx, d in enumerate(days):
-            cnt = d.get("contributionCount", 0)
-            if cnt == 0:
-                c = t["heat_0"]
-            elif cnt <= 4:
-                c = t["heat_1"]
-            elif cnt <= 15:
-                c = t["heat_2"]
-            elif cnt <= 35:
-                c = t["heat_3"]
-            else:
-                c = t["heat_4"]
-            cx = 28 + w_idx * 9.6
-            cy = 232 + d_idx * 10
-            heatmap_cells.append(
-                f'<rect x="{cx:.1f}" y="{cy:.1f}" width="7.6" height="7.6" rx="1.8" fill="{c}" />'
-            )
-
-    # Sparkline path for 52-week velocity
-    if not weekly_sums:
-        weekly_sums = [10] * 52
-    max_w = max(max(weekly_sums), 1)
-    spark_pts = []
-    for i, val in enumerate(weekly_sums):
-        sx = 28 + (i / max(len(weekly_sums) - 1, 1)) * 498
-        sy = 192 - (val / max_w) * 58
-        spark_pts.append(f"{sx:.1f},{sy:.1f}")
-    polyline_pts = " ".join(spark_pts)
-    area_pts = f"28,196 {polyline_pts} 526,196"
-
-    # Yearly bars (2021 - 2026)
-    yearly = data.get("yearly_contributions", {})
-    years_list = ["2021", "2022", "2023", "2024", "2025", "2026"]
-    year_bars = []
-    for idx, yr in enumerate(years_list):
-        val = int(yearly.get(yr, yearly.get(int(yr), 0)))
-        bx = 28 + idx * 86
-        # non-linear scale so smaller years are visible and 2026 stands tall
-        bh = min(max(int((val ** 0.45) * 2.1), 8), 54)
-        by = 374 - bh
-        bar_col = t["accent_teal"] if yr == "2026" else t["accent_cyan"]
-        year_bars.append(
-            f"""
-      <g>
-        <rect x="{bx}" y="{by}" width="52" height="{bh}" rx="5" fill="{bar_col}" opacity="{1.0 if yr == '2026' else 0.65}" />
-        <text x="{bx + 26}" y="{by - 6}" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700" fill="{t['text_primary']}">{val:,}</text>
-        <text x="{bx + 26}" y="390" text-anchor="middle" class="font-mono" font-size="10.5" fill="{t['text_secondary']}">{yr}</text>
-      </g>"""
-        )
-
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" width="100%" height="100%">
-  <defs>
-    <linearGradient id="sparkArea" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="{t['accent_teal']}" stop-opacity="0.38" />
-      <stop offset="100%" stop-color="{t['accent_teal']}" stop-opacity="0.0" />
-    </linearGradient>
-    <linearGradient id="kpiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="{t['accent_teal']}" />
-      <stop offset="100%" stop-color="{t['accent_cyan']}" />
-    </linearGradient>
-  </defs>
-
-  <style>
-    .font-sans {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }}
-    .font-mono {{ font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }}
-  </style>
-
-  <!-- Outer Frame -->
-  <rect width="1200" height="430" rx="20" fill="{t['bg_start']}" stroke="{t['card_border']}" stroke-width="1.5" />
-
-  <!-- LEFT BENTO CARD: Codebase & Language Telemetry -->
-  <g transform="translate(20, 20)">
-    <rect width="564" height="390" rx="16" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.2" />
-
-    <text x="28" y="38" class="font-mono" font-size="11.5" font-weight="700" fill="{t['accent_teal']}" letter-spacing="1.6">01 // CODEBASE &amp; LANGUAGE TELEMETRY</text>
-    <text x="536" y="38" text-anchor="end" class="font-mono" font-size="11.5" font-weight="600" fill="{t['text_secondary']}">{total_mb:.1f} MB SOURCE CODE</text>
-
-    <!-- 4 Mini KPI Pills -->
-    <g transform="translate(28, 52)">
-      <rect x="0" y="0" width="120" height="36" rx="8" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-      <text x="12" y="15" class="font-mono" font-size="9.5" fill="{t['text_secondary']}">ORIGINAL REPOS</text>
-      <text x="12" y="29" class="font-mono" font-size="13" font-weight="700" fill="{t['text_primary']}">{data['owned_repos']} Systems</text>
-
-      <rect x="129" y="0" width="120" height="36" rx="8" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-      <text x="141" y="15" class="font-mono" font-size="9.5" fill="{t['text_secondary']}">PUBLICINDEX</text>
-      <text x="141" y="29" class="font-mono" font-size="13" font-weight="700" fill="{t['accent_cyan']}">{data['public_repos_total']}+ Repos</text>
-
-      <rect x="258" y="0" width="120" height="36" rx="8" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-      <text x="270" y="15" class="font-mono" font-size="9.5" fill="{t['text_secondary']}">OSS STARS / FORKS</text>
-      <text x="270" y="29" class="font-mono" font-size="13" font-weight="700" fill="{t['accent_amber']}">★ {data['total_stars']} · ⑂ {data['total_forks']}</text>
-
-      <rect x="387" y="0" width="121" height="36" rx="8" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-      <text x="399" y="15" class="font-mono" font-size="9.5" fill="{t['text_secondary']}">ACCOUNT TENURE</text>
-      <text x="399" y="29" class="font-mono" font-size="13" font-weight="700" fill="{t['accent_emerald']}">Since Jun 2020</text>
-    </g>
-
-    <!-- Stacked Multi-Language Bar -->
-    {''.join(stacked_rects)}
-
-    <!-- Language Breakdown Rows -->
-    {''.join(lang_rows)}
-  </g>
-
-  <!-- RIGHT BENTO CARD: Contribution Velocity & 52-Week Heatmap -->
-  <g transform="translate(604, 20)">
-    <rect width="576" height="390" rx="16" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.2" />
-
-    <text x="28" y="38" class="font-mono" font-size="11.5" font-weight="700" fill="{t['accent_cyan']}" letter-spacing="1.6">02 // CONTRIBUTION VELOCITY &amp; ACTIVITY PULSE</text>
-    <text x="548" y="38" text-anchor="end" class="font-mono" font-size="11" fill="{t['text_secondary']}">PUBLIC + PRIVATE TELEMETRY</text>
-
-    <!-- Velocity KPIs -->
-    <g transform="translate(28, 52)">
-      <rect x="0" y="0" width="166" height="58" rx="10" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-      <text x="14" y="20" class="font-mono" font-size="10" fill="{t['text_secondary']}">LAST 12 MONTHS</text>
-      <text x="14" y="45" class="font-sans" font-size="24" font-weight="800" fill="{t['accent_teal']}">{data['annual_contributions']:,}</text>
-      <text x="98" y="44" class="font-mono" font-size="10.5" fill="{t['text_secondary']}">commits</text>
-
-      <rect x="177" y="0" width="166" height="58" rx="10" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-      <text x="191" y="20" class="font-mono" font-size="10" fill="{t['text_secondary']}">LIFETIME TOTAL</text>
-      <text x="191" y="45" class="font-sans" font-size="24" font-weight="800" fill="{t['accent_cyan']}">{data['lifetime_contributions']:,}+</text>
-      <text x="285" y="44" class="font-mono" font-size="10.5" fill="{t['text_secondary']}">shipped</text>
-
-      <rect x="354" y="0" width="166" height="58" rx="10" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-      <text x="368" y="20" class="font-mono" font-size="10" fill="{t['text_secondary']}">PEAK DAILY BURST</text>
-      <text x="368" y="45" class="font-sans" font-size="24" font-weight="800" fill="{t['accent_indigo']}">{data['max_daily_contributions']}</text>
-      <text x="412" y="44" class="font-mono" font-size="10.5" fill="{t['text_secondary']}">commits / day</text>
-    </g>
-
-    <!-- 52-Week Velocity Sparkline -->
-    <text x="28" y="130" class="font-mono" font-size="10.5" font-weight="600" fill="{t['text_secondary']}">52-WEEK COMMIT VELOCITY WAVE</text>
-    <polygon points="{area_pts}" fill="url(#sparkArea)" />
-    <polyline points="{polyline_pts}" fill="none" stroke="url(#kpiGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
-
-    <!-- 52-Week Contribution Matrix -->
-    <text x="28" y="222" class="font-mono" font-size="10.5" font-weight="600" fill="{t['text_secondary']}">52-WEEK CONTRIBUTION DENSITY MATRIX</text>
-    {''.join(heatmap_cells)}
-
-    <!-- Annual Trajectory Bars -->
-    <text x="28" y="316" class="font-mono" font-size="10.5" font-weight="600" fill="{t['text_secondary']}">YEAR-OVER-YEAR ACCELERATION (2021 → 2026)</text>
-    {''.join(year_bars)}
-  </g>
-</svg>
-"""
+def polygon(cx: float, cy: float, r: float, n: int, rot: float = -math.pi / 2) -> str:
+    """Convex regular polygon (octagon etc.)."""
+    pts = [(cx + r * math.cos(rot + i * 2 * math.pi / n), cy + r * math.sin(rot + i * 2 * math.pi / n)) for i in range(n)]
+    return "M" + " L".join(f"{x:.2f} {y:.2f}" for x, y in pts) + " Z"
 
 
-def generate_architecture_svg(mode: str) -> str:
-    t = get_theme(mode)
-    layers = [
-        (
-            "01 // INTERFACE & DESIGN SYSTEMS",
-            "Pixel-precise, ultra-fast web & native interfaces with zero-bloat motion & SEO/GEO architecture.",
-            t["accent_teal"],
-            ["Astro 7", "Vue 3", "React 19", "SwiftUI", "Tailwind CSS v4", "Framer Motion", "TypeScript"],
-        ),
-        (
-            "02 // ENTERPRISE ERP, CRM & AI PLATFORMS",
-            "Self-hosted business operating systems, DGI e-invoicing, POS, treasury & multi-LLM orchestration.",
-            t["accent_cyan"],
-            ["RIVER ERP", "RAIN Commerce", "Laravel 13", "PHP 8.4", "Node.js", "Claude / Gemini / OpenAI", "Ollama"],
-        ),
-        (
-            "03 // NATIVE DESKTOP, VIRTUALIZATION & NETWORK SECURITY",
-            "Apple Silicon hypervisors, cross-platform Rust desktop launchers & L2/L3 SD-WAN packet diagnostics.",
-            t["accent_indigo"],
-            ["LumenVM (Apple Virtualization)", "Tauri v2", "Rust", "NetSentinel L2/L3", "ARM64 / Apple Silicon", "SQLite"],
-        ),
-        (
-            "04 // BARE-METAL LINUX, SERVER & CLOUD INFRASTRUCTURE",
-            "Minimalist Suckless Linux distros, hardened Webmin/Virtualmin Docker engines & encrypted backups.",
-            t["accent_amber"],
-            ["AbyssLinux (Void + dwm)", "Debian Servers", "Virtualmin-Docker", "Perl", "Docker", "Nginx / Apache", "Rclone / S3"],
-        ),
-    ]
-
-    cards_svg = []
-    for idx, (title, subtitle, color, tags) in enumerate(layers):
-        cy = 62 + idx * 72
-        tag_x = 580
-        tags_svg = []
-        for tag in tags:
-            tw = len(tag) * 7.2 + 20
-            if tag_x + tw > 1165:
-                break
-            tags_svg.append(
-                f"""
-        <rect x="{tag_x:.1f}" y="{cy + 16}" width="{tw:.1f}" height="28" rx="7" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-        <text x="{tag_x + tw / 2:.1f}" y="{cy + 34}" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="{t['text_primary']}">{esc(tag)}</text>"""
-            )
-            tag_x += tw + 8
-
-        cards_svg.append(
-            f"""
-    <g>
-      <rect x="24" y="{cy}" width="1152" height="60" rx="12" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.2" />
-      <rect x="24" y="{cy}" width="6" height="60" rx="3" fill="{color}" />
-      <text x="46" y="{cy + 25}" class="font-mono" font-size="12" font-weight="700" fill="{color}" letter-spacing="1.2">{esc(title)}</text>
-      <text x="46" y="{cy + 45}" class="font-sans" font-size="12.5" fill="{t['text_secondary']}">{esc(subtitle)}</text>
-      {''.join(tags_svg)}
-    </g>"""
-        )
-
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 366" width="100%" height="100%">
-  <style>
-    .font-sans {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }}
-    .font-mono {{ font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }}
-  </style>
-
-  <rect width="1200" height="366" rx="20" fill="{t['bg_start']}" stroke="{t['card_border']}" stroke-width="1.5" />
-  <text x="28" y="38" class="font-mono" font-size="12" font-weight="700" fill="{t['accent_teal']}" letter-spacing="1.8">FULL-STACK TO BARE-METAL ENGINEERING ARCHITECTURE</text>
-  <text x="1172" y="38" text-anchor="end" class="font-mono" font-size="11" fill="{t['text_secondary']}">INTERFACE ↔ APPLICATION ↔ RUNTIME ↔ KERNEL</text>
-
-  {''.join(cards_svg)}
-</svg>
-"""
+def arch(x: float, c: float, w: float, base: float) -> str:
+    """Moroccan horseshoe arch: a circle of radius w centred at (x, c), opened below, legs down to `base`."""
+    lx, rx, sy = x - 0.8 * w, x + 0.8 * w, c + 0.6 * w
+    return f"M{lx:.2f} {base:.2f} L{lx:.2f} {sy:.2f} A{w} {w} 0 1 1 {rx:.2f} {sy:.2f} L{rx:.2f} {base:.2f}"
 
 
-def generate_project_card_svg(
-    slug: str,
-    badge: str,
-    title: str,
-    desc_line1: str,
-    desc_line2: str,
-    tags: list[str],
-    accent_key: str,
-    stars: int,
-    forks: int,
-    status_label: str,
-    mode: str,
-) -> str:
-    t = get_theme(mode)
-    accent = t[accent_key]
+def diamond(x: float, y: float, r: float) -> str:
+    return f"M{x:.2f} {y - r:.2f} L{x + r:.2f} {y:.2f} L{x:.2f} {y + r:.2f} L{x - r:.2f} {y:.2f}Z"
 
-    tag_pills = []
-    tx = 24.0
-    for tag in tags:
-        tw = len(tag) * 7.2 + 20
-        tag_pills.append(
-            f"""
-    <rect x="{tx:.1f}" y="158" width="{tw:.1f}" height="26" rx="6" fill="{t['pill_bg']}" stroke="{t['pill_border']}" stroke-width="1" />
-    <text x="{tx + tw / 2:.1f}" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="{t['text_primary']}">{esc(tag)}</text>"""
-        )
-        tx += tw + 8
 
-    stats_badge = (
-        f"★ {stars}   ⑂ {forks}" if stars > 0 else status_label
+def base_style(t: dict[str, str]) -> str:
+    return f"""
+    .serif {{ font-family: {SERIF}; }}
+    .mono {{ font-family: {MONO}; }}
+    .draw {{ stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.65,0,.35,1) forwards; }}
+    .fade {{ opacity: 0; animation: fade 1.2s ease forwards; }}
+    .rise {{ opacity: 0; animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards; }}
+    @keyframes draw {{ to {{ stroke-dashoffset: 0; }} }}
+    @keyframes fade {{ to {{ opacity: 1; }} }}
+    @keyframes rise {{ from {{ opacity: 0; transform: translateY(14px); }} to {{ opacity: 1; transform: translateY(0); }} }}
+    @keyframes spin {{ to {{ transform: rotate(360deg); }} }}
+    @keyframes spinr {{ to {{ transform: rotate(-360deg); }} }}
+    @keyframes blink {{ 50% {{ opacity: 0; }} }}
+    @keyframes breathe {{ 0%,100% {{ opacity: .55; }} 50% {{ opacity: 1; }} }}
+    @keyframes sway {{ 0%,100% {{ transform: rotate(-4deg); }} 50% {{ transform: rotate(4deg); }} }}
+    @media (prefers-reduced-motion: reduce) {{
+      * {{ animation-duration: 0s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }}
+    }}"""
+
+
+# ─── HERO ────────────────────────────────────────────────────────────────────
+def render_hero(data: dict[str, Any], mode: str) -> str:
+    t = THEMES[mode]
+    W, H = 1200, 460
+    cx, cy = 930, 230
+
+    # Background: diamond tile lattice, faded by a radial mask
+    tile = 56
+    h = tile / 2
+    tile_d = diamond(h, h, h) + f" M{h - 3} {h} a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0"
+
+    # Rotating border of small diamond tiles
+    border = "".join(
+        f'<path d="{diamond(cx + 178 * math.cos(i * math.pi / 18), cy + 178 * math.sin(i * math.pi / 18), 5)}" '
+        f'fill="{t["accent"] if i % 3 == 0 else t["faint"]}" fill-opacity="{1 if i % 3 == 0 else .7}"/>'
+        for i in range(36)
     )
 
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 206" width="100%" height="100%">
+    # Nested horseshoe arches sharing one threshold
+    ac, base = cy - 20, cy + 150
+    arches = []
+    for i, (w, col, sw) in enumerate([(112, t["accent"], 1.8), (86, t["blue"], 1.6), (60, t["ochre"], 1.4)]):
+        arches.append(
+            f'<path class="draw" pathLength="1" d="{arch(cx, ac, w, base)}" fill="none" stroke="{col}" stroke-width="{sw}" '
+            f'stroke-linecap="round" style="animation-delay:{.4 + i * .35:.2f}s;animation-duration:2.6s"/>'
+        )
+    doorway = f'<path d="{arch(cx, ac, 60, base)} Z" fill="{t["accent"]}" fill-opacity=".10"/>'
+    # Hanging lantern inside the doorway
+    lantern = (
+        f'<g class="lantern">'
+        f'<line x1="{cx}" y1="{ac - 60}" x2="{cx}" y2="{ac + 2}" stroke="{t["ink"]}" stroke-width="1"/>'
+        f'<path d="M{cx - 9} {ac + 4} H{cx + 9} L{cx + 13} {ac + 22} L{cx} {ac + 34} L{cx - 13} {ac + 22} Z" '
+        f'fill="{t["ochre"]}" fill-opacity=".85" stroke="{t["ink"]}" stroke-width="1"/>'
+        f'<circle cx="{cx}" cy="{ac + 20}" r="16" fill="{t["ochre"]}" fill-opacity=".18"/></g>'
+    )
+
+    name = "MrZaKaRiA"
+    name_x = 72
+    cmd = "ship --from morocco --to everywhere"
+    char_w = 10.84  # approx mono advance @ 18px
+    steps = len(cmd)
+    typed_vals = ";".join(f"{i * char_w:.1f}" for i in range(steps + 1))
+    typed_times = ";".join(f"{i / steps:.3f}" for i in range(steps + 1))
+
+    yr = data.get("annual_contributions", 0)
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="MrZaKaRiA — I build business software, operating systems, and the servers they run on.">
   <defs>
-    <linearGradient id="topBar-{slug}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="{accent}" />
-      <stop offset="100%" stop-color="{t['accent_cyan']}" stop-opacity="0.2" />
-    </linearGradient>
+    <pattern id="z" width="{tile}" height="{tile}" patternUnits="userSpaceOnUse">
+      <path d="{tile_d}" fill="none" stroke="{t['faint']}" stroke-width=".7"/>
+    </pattern>
+    <radialGradient id="fadeR" cx="{cx / W:.3f}" cy=".5" r=".55">
+      <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+      <stop offset=".55" stop-color="#fff" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="m"><rect width="{W}" height="{H}" fill="url(#fadeR)"/></mask>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="{t['accent']}" stop-opacity=".22"/>
+      <stop offset="1" stop-color="{t['accent']}" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="nameClip"><rect x="0" y="0" width="0" height="{H}">
+      <animate attributeName="width" from="0" to="{W}" dur="1.6s" begin=".2s" fill="freeze" calcMode="spline" keySplines=".65 0 .35 1" keyTimes="0;1"/>
+    </rect></clipPath>
+    <clipPath id="typeClip"><rect x="{name_x + 24}" y="300" width="0" height="40">
+      <animate attributeName="width" values="{typed_vals}" keyTimes="{typed_times}" calcMode="discrete" dur="2.2s" begin="1.9s" fill="freeze"/>
+    </rect></clipPath>
   </defs>
-  <style>
-    .font-sans {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }}
-    .font-mono {{ font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }}
+  <style>{base_style(t)}
+    .rot {{ transform-origin: {cx}px {cy}px; animation: spin 120s linear infinite; }}
+    .rotr {{ transform-origin: {cx}px {cy}px; animation: spinr 160s linear infinite; }}
+    .pulse {{ transform-origin: {cx}px {cy}px; animation: breathe 5s ease-in-out infinite; }}
+    .lantern {{ transform-origin: {cx}px {ac - 60}px; animation: sway 6s ease-in-out infinite; }}
+    .cursor {{ animation: blink 1s steps(1) infinite; }}
   </style>
 
-  <rect width="580" height="206" rx="16" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.5" />
-  <rect x="20" y="1" width="540" height="3" rx="1.5" fill="url(#topBar-{slug})" />
+  <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="{t['bg']}" stroke="{t['line']}"/>
+  <rect width="{W}" height="{H}" rx="10" fill="url(#z)" mask="url(#m)" opacity=".55"/>
+  <circle cx="{cx}" cy="{cy}" r="230" fill="url(#glow)" class="pulse"/>
 
-  <g transform="translate(24, 28)">
-    <rect x="0" y="0" width="{len(badge) * 7.5 + 22:.0f}" height="24" rx="6" fill="{t['pill_bg']}" stroke="{accent}" stroke-width="1" stroke-opacity="0.6" />
-    <text x="11" y="16" class="font-mono" font-size="10.5" font-weight="700" fill="{accent}" letter-spacing="0.8">{esc(badge)}</text>
+  <!-- doorway -->
+  <circle class="rotr" cx="{cx}" cy="{cy}" r="198" fill="none" stroke="{t['line']}" stroke-width="1" stroke-dasharray="2 6"/>
+  <g class="rot fade" style="animation-delay:.2s">{border}</g>
+  <path class="draw" pathLength="1" d="{polygon(cx, cy, 160, 8, -math.pi / 2 + math.pi / 8)}" fill="none" stroke="{t['faint']}" stroke-width="1" style="animation-duration:3s"/>
+  <g class="fade" style="animation-delay:1.6s">{doorway}</g>
+  {''.join(arches)}
+  <line class="draw" pathLength="1" x1="{cx - 112}" y1="{base}" x2="{cx + 112}" y2="{base}" stroke="{t['ink']}" stroke-width="1.4" style="animation-delay:.2s;animation-duration:1.2s"/>
+  <g class="fade" style="animation-delay:2.4s">{lantern}</g>
 
-    <text x="532" y="16" text-anchor="end" class="font-mono" font-size="12" font-weight="700" fill="{t['accent_amber'] if stars > 0 else t['accent_emerald']}">{esc(stats_badge)}</text>
+  <!-- left column -->
+  <g class="mono fade" style="animation-delay:.05s" font-size="13" letter-spacing="2.6" fill="{t['muted']}">
+    <text x="{name_x}" y="78">FOUNDER  /  SYSTEMS ENGINEER</text>
+  </g>
+  <line class="draw" pathLength="1" x1="{name_x}" y1="96" x2="{name_x + 56}" y2="96" stroke="{t['accent']}" stroke-width="2" style="animation-delay:.1s;animation-duration:1s"/>
 
-    <text x="0" y="56" class="font-sans" font-size="22" font-weight="800" fill="{t['text_primary']}">{esc(title)}</text>
-    <text x="532" y="54" text-anchor="end" class="font-mono" font-size="14" fill="{accent}">↗</text>
-
-    <text x="0" y="84" class="font-sans" font-size="13.5" fill="{t['text_secondary']}">{esc(desc_line1)}</text>
-    <text x="0" y="105" class="font-sans" font-size="13.5" fill="{t['text_secondary']}">{esc(desc_line2)}</text>
+  <g clip-path="url(#nameClip)">
+    <text class="serif" x="{name_x - 4}" y="208" font-size="122" font-weight="500" letter-spacing="-3" fill="{t['ink']}">{name}</text>
   </g>
 
-  {''.join(tag_pills)}
+  <g class="serif rise" style="animation-delay:1.1s" font-size="25" fill="{t['muted']}" font-style="italic">
+    <text x="{name_x}" y="256">I build business software, operating systems,</text>
+    <text x="{name_x}" y="288">and the servers they run on.</text>
+  </g>
+
+  <g class="mono" font-size="18">
+    <text class="fade" style="animation-delay:1.7s" x="{name_x}" y="330" fill="{t['accent']}">$</text>
+    <g clip-path="url(#typeClip)"><text x="{name_x + 24}" y="330" fill="{t['ink']}">{cmd}</text></g>
+    <rect class="cursor" x="{name_x + 24 + steps * char_w + 4:.1f}" y="315" width="10" height="20" fill="{t['accent']}" opacity=".9"/>
+  </g>
+
+  <g class="mono fade" style="animation-delay:2.6s" font-size="12.5" letter-spacing="1.6" fill="{t['muted']}">
+    <line x1="{name_x}" y1="384" x2="{name_x + 560}" y2="384" stroke="{t['line']}"/>
+    <text x="{name_x}" y="412">31°47′N  7°05′W</text>
+    <text x="{name_x + 180}" y="412">MOROCCO</text>
+    <text x="{name_x + 300}" y="412"><tspan fill="{t['ink']}">{yr:,}</tspan> CONTRIBUTIONS / YR</text>
+  </g>
 </svg>
 """
 
 
-def generate_footer_svg(data: dict[str, Any], mode: str) -> str:
-    t = get_theme(mode)
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="100%">
-  <defs>
-    <linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="{t['accent_teal']}" />
-      <stop offset="50%" stop-color="{t['accent_cyan']}" />
-      <stop offset="100%" stop-color="{t['accent_indigo']}" />
-    </linearGradient>
-  </defs>
-  <style>
-    .font-sans {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }}
-    .font-mono {{ font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }}
+# ─── SECTION HEADER ──────────────────────────────────────────────────────────
+def render_section(num: str, title: str, meta: str, mode: str) -> str:
+    t = THEMES[mode]
+    W, H = 1200, 84
+    title_w = len(title) * 17.5
+    x0 = 150 + title_w + 28
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{esc(title)}">
+  <style>{base_style(t)}</style>
+  <text class="mono" x="40" y="52" font-size="15" letter-spacing="2" fill="{t['accent']}">§ {num}</text>
+  <path d="{arch(118, 40, 9, 56)}" fill="none" stroke="{t['accent']}" stroke-width="1.4" stroke-linecap="round"/>
+  <text class="serif" x="148" y="56" font-size="34" fill="{t['ink']}">{esc(title)}</text>
+  <line class="draw" pathLength="1" x1="{x0:.0f}" y1="47" x2="{W - 60 - len(meta) * 8.6:.0f}" y2="47" stroke="{t['line']}" stroke-width="1"/>
+  <text class="mono" x="{W - 40}" y="52" text-anchor="end" font-size="13" letter-spacing="1.8" fill="{t['muted']}">{esc(meta.upper())}</text>
+</svg>
+"""
+
+
+# ─── PROJECT CARD ────────────────────────────────────────────────────────────
+def render_card(p: dict[str, Any], idx: int, stars: int, mode: str) -> str:
+    t = THEMES[mode]
+    W, H = 600, 330
+    mx, my = 500, 100
+    parts = []
+    for i, (d, role) in enumerate(ICONS[p["icon"]]):
+        stroke = t["accent"] if role == "accent" else t["ink"]
+        fill = t["panel"] if role == "fill" else "none"
+        parts.append(
+            f'<path class="draw" pathLength="1" d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="1.6" '
+            f'stroke-linecap="round" stroke-linejoin="round" style="animation-delay:{.2 + i * .18:.2f}s;animation-duration:1.6s"/>'
+        )
+    ticks = "".join(
+        f'<path d="{diamond(mx + 66 * math.cos(i * math.pi / 6), my + 66 * math.sin(i * math.pi / 6), 3)}" '
+        f'fill="{t["accent"] if i % 3 == 0 else t["faint"]}"/>'
+        for i in range(12)
+    )
+    desc = "".join(
+        f'<text x="36" y="{176 + i * 30}">{esc(line)}</text>' for i, line in enumerate(p["lines"])
+    )
+    star_txt = f"{stars} STARS" if stars else "OPEN SOURCE"
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{esc(p['name'])} — {esc(' '.join(p['lines']))}">
+  <style>{base_style(t)}
+    .spin {{ transform-origin: {mx}px {my}px; animation: spin 60s linear infinite; }}
   </style>
-
-  <rect width="1200" height="120" rx="18" fill="{t['card_bg']}" stroke="{t['card_border']}" stroke-width="1.5" />
-  <rect x="40" y="116" width="1120" height="2.5" rx="1.2" fill="url(#footGrad)" opacity="0.75" />
-
-  <text x="600" y="46" text-anchor="middle" class="font-sans" font-size="16" font-weight="700" fill="{t['text_primary']}">
-    From pixel-precise interfaces to resilient Linux &amp; Apple Silicon infrastructure.
-  </text>
-  <text x="600" y="72" text-anchor="middle" class="font-mono" font-size="12" fill="{t['text_secondary']}">
-    mrzakaria.com  ·  Engineered in Morocco  ·  Open to High-Impact Products &amp; Consulting
-  </text>
-  <text x="600" y="96" text-anchor="middle" class="font-mono" font-size="10.5" fill="{t['text_muted']}">
-    TELEMETRY SYNCED VIA GITHUB GRAPHQL API · {esc(data['updated_at'])}
-  </text>
+  <rect x="6.5" y="6.5" width="{W - 13}" height="{H - 13}" rx="3" fill="{t['panel']}" stroke="{t['line']}"/>
+  <circle cx="{mx}" cy="{my}" r="66" fill="none" stroke="{t['line']}"/>
+  <g class="spin">{ticks}</g>
+  <g transform="translate({mx} {my})">{''.join(parts)}</g>
+  <text class="mono" x="36" y="52" font-size="14" letter-spacing="2" fill="{t['muted']}"><tspan fill="{t['accent']}">{idx:02d}</tspan>  ·  {esc(p['kind'].upper())}</text>
+  <text class="serif" x="34" y="118" font-size="46" fill="{t['ink']}" letter-spacing="-.5">{esc(p['name'])}</text>
+  <g class="serif" font-size="20" fill="{t['muted']}">{desc}</g>
+  <line x1="36" y1="270" x2="{W - 36}" y2="270" stroke="{t['line']}"/>
+  <text class="mono" x="36" y="300" font-size="14" fill="{t['ink']}">{esc(p['stack'])}</text>
+  <text class="mono" x="{W - 36}" y="300" font-size="13" letter-spacing="1.4" text-anchor="end" fill="{t['ochre']}">{star_txt}</text>
 </svg>
 """
+
+
+# ─── LEDGER (numbers + diamond contribution map + languages) ─────────────────
+LANG_ALIAS = {"Blade": "PHP", "SCSS": "CSS", "Vue": "Vue", "Go Template": None, "Roff": None, "Makefile": None,
+              "HCL": None, "Vim Script": None, "Dockerfile": None, "Raku": None, "PowerShell": None, "MDX": None,
+              "HTML": None, "CSS": None, "Kotlin": None, "Objective-C": None, "Solidity": None, "PLpgSQL": None}
+
+
+def render_ledger(data: dict[str, Any], mode: str) -> str:
+    t = THEMES[mode]
+    W = 1200
+    weeks = data.get("weeks", [])[-53:]
+    counts = [d["contributionCount"] for w in weeks for d in w["contributionDays"]]
+    nonzero = sorted(c for c in counts if c > 0)
+
+    def q(p: float) -> int:
+        return nonzero[min(len(nonzero) - 1, int(len(nonzero) * p))] if nonzero else 1
+
+    q1, q2, q3 = q(.25), q(.5), q(.75)
+    peak = max(counts) if counts else 0
+
+    # Stats row
+    stats = [
+        (f"{data.get('annual_contributions', 0):,}", "contributions, last 12 months"),
+        (f"{data.get('active_days_year', 0)}", "days shipping"),
+        (f"{data.get('owned_repos', 0)}", "repositories authored"),
+        (f"{peak}", "commits on the busiest day"),
+    ]
+    col = (W - 80) / 4
+    stat_svg = "".join(
+        f'<g class="rise" style="animation-delay:{.1 + i * .12:.2f}s">'
+        f'<text class="serif" x="{40 + i * col:.0f}" y="96" font-size="58" fill="{t["ink"]}" letter-spacing="-1">{v}</text>'
+        f'<text class="mono" x="{40 + i * col + 2:.0f}" y="126" font-size="12.5" letter-spacing="1.4" fill="{t["muted"]}">{esc(l.upper())}</text>'
+        f'</g>'
+        + (f'<line x1="{40 + i * col - 22:.0f}" y1="44" x2="{40 + i * col - 22:.0f}" y2="132" stroke="{t["line"]}"/>' if i else "")
+        for i, (v, l) in enumerate(stats)
+    )
+
+    # Diamond map
+    top = 186
+    gx0, step = 52, (W - 104) / max(1, len(weeks) - 1) if weeks else 20
+    r = 7.4
+    cells = []
+    for wi, w in enumerate(weeks):
+        for d in w["contributionDays"]:
+            dow = datetime.date.fromisoformat(d["date"]).weekday()  # Mon=0
+            dow = (dow + 1) % 7  # Sun=0 like GitHub
+            c = d["contributionCount"]
+            x = gx0 + wi * step
+            y = top + dow * (step * .92)
+            if c == 0:
+                fill, op, stroke = t["empty"], 1, "none"
+            else:
+                lvl = 1 if c <= q1 else 2 if c <= q2 else 3 if c <= q3 else 4
+                fill, op, stroke = t["accent"], [0, .28, .5, .75, 1][lvl], "none"
+            if c == peak and c > 0:
+                fill, op = t["ochre"], 1
+            delay = .3 + wi * .028 + dow * .02
+            cells.append(
+                f'<path class="fade" d="M{x:.1f} {y - r:.1f} L{x + r:.1f} {y:.1f} L{x:.1f} {y + r:.1f} L{x - r:.1f} {y:.1f}Z" '
+                f'fill="{fill}" fill-opacity="{op}" style="animation-delay:{delay:.2f}s"><title>{d["date"]}: {c}</title></path>'
+            )
+    map_h = 6 * step * .92
+    # month labels
+    months = []
+    last = None
+    for wi, w in enumerate(weeks):
+        m = w["contributionDays"][0]["date"][:7]
+        if m != last and wi < len(weeks) - 2:
+            last = m
+            label = datetime.date.fromisoformat(m + "-01").strftime("%b").upper()
+            months.append(f'<text x="{gx0 + wi * step - 4:.0f}" y="{top - 22}">{label}</text>')
+
+    # Languages
+    langs: dict[str, int] = {}
+    for name, size in data.get("languages", {}).items():
+        key = LANG_ALIAS.get(name, name)
+        if key:
+            langs[key] = langs.get(key, 0) + size
+    top_l = sorted(langs.items(), key=lambda kv: -kv[1])[:7]
+    total = sum(v for _, v in top_l) or 1
+    ly = top + map_h + 78
+    bar_w = W - 80
+    palette = [t["accent"], t["blue"], t["ochre"], t["ink"], t["muted"], t["faint"], t["line"]]
+    x = 40.0
+    bars, labels = [], []
+    for i, (name, v) in enumerate(top_l):
+        w_ = bar_w * v / total
+        bars.append(
+            f'<rect class="fade" x="{x:.1f}" y="{ly}" width="{max(w_ - 3, 2):.1f}" height="10" fill="{palette[i]}" style="animation-delay:{1.4 + i * .1:.2f}s"/>'
+        )
+        x += w_
+    lx = 40.0
+    for i, (name, v) in enumerate(top_l):
+        pct = 100 * v / total
+        txt = f"{name} {pct:.0f}%" if pct >= 1 else f"{name} <1%"
+        labels.append(
+            f'<path d="M{lx + 5:.0f} {ly + 31} l5 5 l-5 5 l-5 -5Z" fill="{palette[i]}"/>'
+            f'<text x="{lx + 18:.0f}" y="{ly + 41}">{esc(txt)}</text>'
+        )
+        lx += 30 + len(txt) * 8.2
+    H = int(ly + 80)
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{data.get('annual_contributions', 0)} contributions in the last year">
+  <style>{base_style(t)}</style>
+  {stat_svg}
+  <g class="mono" font-size="11.5" letter-spacing="1.6" fill="{t['muted']}">{''.join(months)}</g>
+  {''.join(cells)}
+  <g class="mono" font-size="11.5" letter-spacing="1.4" fill="{t['muted']}">
+    <text x="40" y="{ly - 18}">BYTES WRITTEN, BY LANGUAGE</text>
+    <text x="{W - 40}" y="{ly - 18}" text-anchor="end">SYNCED {esc(data.get('updated_at', ''))}</text>
+  </g>
+  {''.join(bars)}
+  <g class="mono" font-size="13" fill="{t['ink']}">{''.join(labels)}</g>
+</svg>
+"""
+
+
+# ─── FOOTER ──────────────────────────────────────────────────────────────────
+def render_footer(mode: str) -> str:
+    t = THEMES[mode]
+    W, H = 1200, 150
+    band = []
+    for i in range(0, 36):
+        x = 20 + i * 38.6
+        col = t["accent"] if i % 4 == 0 else t["faint"]
+        band.append(f'<path d="{arch(x, 36, 14, 60)}" fill="none" stroke="{col}" stroke-width="1.2"/>')
+        band.append(f'<path d="{diamond(x + 19.3, 26, 4)}" fill="{t["blue"]}" fill-opacity=".6"/>')
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Made in Morocco">
+  <style>{base_style(t)}
+    @keyframes slide {{ to {{ transform: translateX(-154.4px); }} }}
+    .band {{ animation: slide 14s linear infinite; }}
+  </style>
+  <line x1="0" y1="14" x2="{W}" y2="14" stroke="{t['line']}"/>
+  <line x1="0" y1="66" x2="{W}" y2="66" stroke="{t['line']}"/>
+  <g class="band">{''.join(band)}</g>
+  <text class="serif" x="40" y="118" font-size="22" font-style="italic" fill="{t['muted']}">Made in Morocco, shipped everywhere.</text>
+  <text class="mono" x="{W - 40}" y="116" text-anchor="end" font-size="13" letter-spacing="2" fill="{t['muted']}">MRZAKARIA.COM</text>
+</svg>
+"""
+
+
+SECTIONS = [
+    ("01", "Selected work", "flagship open source"),
+    ("02", "The last twelve months", "live, synced twice a day"),
+    ("03", "Reach me", "open to select work"),
+]
 
 
 def main() -> None:
-    ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     data = fetch_github_data()
     repos = data.get("repos", {})
-
-    projects = [
-        {
-            "slug": "lumenvm",
-            "badge": "APPLE SILICON VIRTUALIZATION",
-            "title": "LumenVM",
-            "desc1": "Native SwiftUI virtual machine manager for Apple Silicon: macOS & Linux",
-            "desc2": "via Apple Virtualization, Windows ARM64, sparse disks & Retina displays.",
-            "tags": ["Swift", "SwiftUI", "Virtualization.framework", "ARM64", "macOS"],
-            "accent": "accent_cyan",
-            "stars": repos.get("LumenVM", {}).get("stars", 11),
-            "forks": repos.get("LumenVM", {}).get("forks", 2),
-            "status": "PUBLIC OSS",
-        },
-        {
-            "slug": "virtualmin-docker",
-            "badge": "SERVER & CONTAINER INFRASTRUCTURE",
-            "title": "Virtualmin-Docker",
-            "desc1": "Security-hardened Webmin & Virtualmin module for orchestrating Docker",
-            "desc2": "containers, images, volumes, networks, and live logs from the browser.",
-            "tags": ["Perl", "Docker", "Webmin", "Virtualmin", "Linux Sysadmin"],
-            "accent": "accent_teal",
-            "stars": repos.get("Virtualmin-Docker", {}).get("stars", 9),
-            "forks": repos.get("Virtualmin-Docker", {}).get("forks", 4),
-            "status": "PUBLIC OSS",
-        },
-        {
-            "slug": "abysslinux",
-            "badge": "SUCKLESS LINUX OPERATING SYSTEM",
-            "title": "AbyssLinux & PMR",
-            "desc1": "Minimalist Suckless-inspired rolling-release Linux distribution & package",
-            "desc2": "repository built on Void Linux, runit, dwm, st, and dmenu (x86_64 & ARM64).",
-            "tags": ["Linux Distro", "Shell", "C / Suckless", "dwm", "xbps", "ARM64"],
-            "accent": "accent_amber",
-            "stars": repos.get("AbyssLinux", {}).get("stars", 3),
-            "forks": repos.get("AbyssLinux", {}).get("forks", 1),
-            "status": "PUBLIC OSS",
-        },
-        {
-            "slug": "river-erp",
-            "badge": "AI-NATIVE BUSINESS OS",
-            "title": "RIVER ERP & Desktop",
-            "desc1": "All-in-one AI-native ERP & CRM for Morocco & Europe: DGI e-invoicing,",
-            "desc2": "POS, inventory, treasury & payroll with native Tauri v2 desktop launchers.",
-            "tags": ["Laravel 13", "Vue 3", "Rust", "Tauri v2", "Tailwind v4"],
-            "accent": "accent_indigo",
-            "stars": repos.get("river-desktop", {}).get("stars", 0),
-            "forks": repos.get("river-desktop", {}).get("forks", 0),
-            "status": "FLAGSHIP PRODUCT",
-        },
-        {
-            "slug": "rain-commerce",
-            "badge": "COMMERCE & DESKTOP ECOSYSTEM",
-            "title": "RAIN Commerce & Desktop",
-            "desc1": "Complete multi-storefront digital commerce platform engineered with",
-            "desc2": "a native cross-platform Rust/Tauri desktop launcher for macOS, Win & Linux.",
-            "tags": ["PHP", "Vue 3", "Rust", "Tauri", "E-Commerce"],
-            "accent": "accent_rose",
-            "stars": repos.get("rain-desktop", {}).get("stars", 0),
-            "forks": repos.get("rain-desktop", {}).get("forks", 0),
-            "status": "FLAGSHIP PRODUCT",
-        },
-        {
-            "slug": "virtualmin-db-backup",
-            "badge": "DATABASE DISASTER RECOVERY",
-            "title": "Virtualmin-Db-Backup",
-            "desc1": "Hardened Webmin/Virtualmin engine to back up MySQL, MariaDB, PostgreSQL,",
-            "desc2": "MongoDB & SQLite (host or Docker) with encryption, checksums & S3/Drive sync.",
-            "tags": ["Perl", "MySQL / Postgres", "MongoDB", "Docker", "Cloud Sync"],
-            "accent": "accent_emerald",
-            "stars": repos.get("Virtualmin-Db-Backup", {}).get("stars", 0),
-            "forks": repos.get("Virtualmin-Db-Backup", {}).get("forks", 0),
-            "status": "PUBLIC OSS",
-        },
-    ]
-
-    for mode in ("dark", "light"):
-        (ASSETS_DIR / f"hero-{mode}.svg").write_text(generate_hero_svg(data, mode), encoding="utf-8")
-        (ASSETS_DIR / f"telemetry-{mode}.svg").write_text(generate_telemetry_svg(data, mode), encoding="utf-8")
-        (ASSETS_DIR / f"architecture-{mode}.svg").write_text(generate_architecture_svg(mode), encoding="utf-8")
-        (ASSETS_DIR / f"footer-{mode}.svg").write_text(generate_footer_svg(data, mode), encoding="utf-8")
-        for p in projects:
-            card_svg = generate_project_card_svg(
-                slug=p["slug"],
-                badge=p["badge"],
-                title=p["title"],
-                desc_line1=p["desc1"],
-                desc_line2=p["desc2"],
-                tags=p["tags"],
-                accent_key=p["accent"],
-                stars=p["stars"],
-                forks=p["forks"],
-                status_label=p["status"],
-                mode=mode,
-            )
-            (ASSETS_DIR / f"card-{p['slug']}-{mode}.svg").write_text(card_svg, encoding="utf-8")
-
-    print(f"Generated {len(list(ASSETS_DIR.glob('*.svg')))} SVG assets successfully in {ASSETS_DIR}")
+    ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+    for mode in THEMES:
+        (ASSETS_DIR / f"hero-{mode}.svg").write_text(render_hero(data, mode), encoding="utf-8")
+        (ASSETS_DIR / f"ledger-{mode}.svg").write_text(render_ledger(data, mode), encoding="utf-8")
+        (ASSETS_DIR / f"footer-{mode}.svg").write_text(render_footer(mode), encoding="utf-8")
+        for num, title, meta in SECTIONS:
+            (ASSETS_DIR / f"section-{num}-{mode}.svg").write_text(render_section(num, title, meta, mode), encoding="utf-8")
+        for i, p in enumerate(PROJECTS, 1):
+            stars = repos.get(p["repo"], {}).get("stars", 0)
+            (ASSETS_DIR / f"card-{p['slug']}-{mode}.svg").write_text(render_card(p, i, stars, mode), encoding="utf-8")
+    print(f"Rendered {len(list(ASSETS_DIR.glob('*.svg')))} SVGs into {ASSETS_DIR}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 330" width="600" height="330" role="img" aria-label="Db Backup — MySQL, Postgres, MongoDB and SQLite backups, host or Docker. Encrypted, checksummed, shipped off-site.">
+  <style>
+    .serif { font-family: 'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif; }
+    .mono { font-family: ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace; }
+    .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.65,0,.35,1) forwards; }
+    .fade { opacity: 0; animation: fade 1.2s ease forwards; }
+    .rise { opacity: 0; animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinr { to { transform: rotate(-360deg); } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes breathe { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+    @keyframes sway { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
+    }
+    .spin { transform-origin: 500px 100px; animation: spin 60s linear infinite; }
+  </style>
+  <rect x="6.5" y="6.5" width="587" height="317" rx="3" fill="#12100E" stroke="#26221E"/>
+  <circle cx="500" cy="100" r="66" fill="none" stroke="#26221E"/>
+  <g class="spin"><path d="M566.00 97.00 L569.00 100.00 L566.00 103.00 L563.00 100.00Z" fill="#E2603B"/><path d="M557.16 130.00 L560.16 133.00 L557.16 136.00 L554.16 133.00Z" fill="#4A443D"/><path d="M533.00 154.16 L536.00 157.16 L533.00 160.16 L530.00 157.16Z" fill="#4A443D"/><path d="M500.00 163.00 L503.00 166.00 L500.00 169.00 L497.00 166.00Z" fill="#E2603B"/><path d="M467.00 154.16 L470.00 157.16 L467.00 160.16 L464.00 157.16Z" fill="#4A443D"/><path d="M442.84 130.00 L445.84 133.00 L442.84 136.00 L439.84 133.00Z" fill="#4A443D"/><path d="M434.00 97.00 L437.00 100.00 L434.00 103.00 L431.00 100.00Z" fill="#E2603B"/><path d="M442.84 64.00 L445.84 67.00 L442.84 70.00 L439.84 67.00Z" fill="#4A443D"/><path d="M467.00 39.84 L470.00 42.84 L467.00 45.84 L464.00 42.84Z" fill="#4A443D"/><path d="M500.00 31.00 L503.00 34.00 L500.00 37.00 L497.00 34.00Z" fill="#E2603B"/><path d="M533.00 39.84 L536.00 42.84 L533.00 45.84 L530.00 42.84Z" fill="#4A443D"/><path d="M557.16 64.00 L560.16 67.00 L557.16 70.00 L554.16 67.00Z" fill="#4A443D"/></g>
+  <g transform="translate(500 100)"><path class="draw" pathLength="1" d="M-34 -26 a34 10 0 1 0 68 0 a34 10 0 1 0 -68 0" fill="none" stroke="#EFE8DC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.20s;animation-duration:1.6s"/><path class="draw" pathLength="1" d="M-34 -26 V30 a34 10 0 0 0 68 0 V-26" fill="none" stroke="#EFE8DC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.38s;animation-duration:1.6s"/><path class="draw" pathLength="1" d="M-34 -6 a34 10 0 0 0 68 0" fill="none" stroke="#E2603B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.56s;animation-duration:1.6s"/><path class="draw" pathLength="1" d="M-34 12 a34 10 0 0 0 68 0" fill="none" stroke="#E2603B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.74s;animation-duration:1.6s"/></g>
+  <text class="mono" x="36" y="52" font-size="14" letter-spacing="2" fill="#8C8377"><tspan fill="#E2603B">06</tspan>  ·  DISASTER RECOVERY</text>
+  <text class="serif" x="34" y="118" font-size="46" fill="#EFE8DC" letter-spacing="-.5">Db Backup</text>
+  <g class="serif" font-size="20" fill="#8C8377"><text x="36" y="176">MySQL, Postgres, MongoDB and SQLite</text><text x="36" y="206">backups, host or Docker. Encrypted,</text><text x="36" y="236">checksummed, shipped off-site.</text></g>
+  <line x1="36" y1="270" x2="564" y2="270" stroke="#26221E"/>
+  <text class="mono" x="36" y="300" font-size="14" fill="#EFE8DC">Perl · Webmin · S3 · rclone</text>
+  <text class="mono" x="564" y="300" font-size="13" letter-spacing="1.4" text-anchor="end" fill="#D9A441">OPEN SOURCE</text>
+</svg>

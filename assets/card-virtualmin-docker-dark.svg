@@ -1,40 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 206" width="100%" height="100%">
-  <defs>
-    <linearGradient id="topBar-virtualmin-docker" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#14B8A6" />
-      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.2" />
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 330" width="600" height="330" role="img" aria-label="Virtualmin Docker — Containers, images, volumes, networks and live logs, orchestrated from Webmin. Security-hardened.">
   <style>
-    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif; }
-    .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+    .serif { font-family: 'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif; }
+    .mono { font-family: ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace; }
+    .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.65,0,.35,1) forwards; }
+    .fade { opacity: 0; animation: fade 1.2s ease forwards; }
+    .rise { opacity: 0; animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinr { to { transform: rotate(-360deg); } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes breathe { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+    @keyframes sway { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
+    }
+    .spin { transform-origin: 500px 100px; animation: spin 60s linear infinite; }
   </style>
-
-  <rect width="580" height="206" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1.5" />
-  <rect x="20" y="1" width="540" height="3" rx="1.5" fill="url(#topBar-virtualmin-docker)" />
-
-  <g transform="translate(24, 28)">
-    <rect x="0" y="0" width="270" height="24" rx="6" fill="#132238" stroke="#14B8A6" stroke-width="1" stroke-opacity="0.6" />
-    <text x="11" y="16" class="font-mono" font-size="10.5" font-weight="700" fill="#14B8A6" letter-spacing="0.8">SERVER &amp; CONTAINER INFRASTRUCTURE</text>
-
-    <text x="532" y="16" text-anchor="end" class="font-mono" font-size="12" font-weight="700" fill="#F59E0B">★ 9   ⑂ 4</text>
-
-    <text x="0" y="56" class="font-sans" font-size="22" font-weight="800" fill="#F8FAFC">Virtualmin-Docker</text>
-    <text x="532" y="54" text-anchor="end" class="font-mono" font-size="14" fill="#14B8A6">↗</text>
-
-    <text x="0" y="84" class="font-sans" font-size="13.5" fill="#94A3B8">Security-hardened Webmin &amp; Virtualmin module for orchestrating Docker</text>
-    <text x="0" y="105" class="font-sans" font-size="13.5" fill="#94A3B8">containers, images, volumes, networks, and live logs from the browser.</text>
-  </g>
-
-  
-    <rect x="24.0" y="158" width="48.8" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
-    <text x="48.4" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Perl</text>
-    <rect x="80.8" y="158" width="63.2" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
-    <text x="112.4" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Docker</text>
-    <rect x="152.0" y="158" width="63.2" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
-    <text x="183.6" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Webmin</text>
-    <rect x="223.2" y="158" width="92.0" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
-    <text x="269.2" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Virtualmin</text>
-    <rect x="323.2" y="158" width="120.8" height="26" rx="6" fill="#132238" stroke="#23395B" stroke-width="1" />
-    <text x="383.6" y="175" text-anchor="middle" class="font-mono" font-size="11" font-weight="600" fill="#F8FAFC">Linux Sysadmin</text>
+  <rect x="6.5" y="6.5" width="587" height="317" rx="3" fill="#12100E" stroke="#26221E"/>
+  <circle cx="500" cy="100" r="66" fill="none" stroke="#26221E"/>
+  <g class="spin"><path d="M566.00 97.00 L569.00 100.00 L566.00 103.00 L563.00 100.00Z" fill="#E2603B"/><path d="M557.16 130.00 L560.16 133.00 L557.16 136.00 L554.16 133.00Z" fill="#4A443D"/><path d="M533.00 154.16 L536.00 157.16 L533.00 160.16 L530.00 157.16Z" fill="#4A443D"/><path d="M500.00 163.00 L503.00 166.00 L500.00 169.00 L497.00 166.00Z" fill="#E2603B"/><path d="M467.00 154.16 L470.00 157.16 L467.00 160.16 L464.00 157.16Z" fill="#4A443D"/><path d="M442.84 130.00 L445.84 133.00 L442.84 136.00 L439.84 133.00Z" fill="#4A443D"/><path d="M434.00 97.00 L437.00 100.00 L434.00 103.00 L431.00 100.00Z" fill="#E2603B"/><path d="M442.84 64.00 L445.84 67.00 L442.84 70.00 L439.84 67.00Z" fill="#4A443D"/><path d="M467.00 39.84 L470.00 42.84 L467.00 45.84 L464.00 42.84Z" fill="#4A443D"/><path d="M500.00 31.00 L503.00 34.00 L500.00 37.00 L497.00 34.00Z" fill="#E2603B"/><path d="M533.00 39.84 L536.00 42.84 L533.00 45.84 L530.00 42.84Z" fill="#4A443D"/><path d="M557.16 64.00 L560.16 67.00 L557.16 70.00 L554.16 67.00Z" fill="#4A443D"/></g>
+  <g transform="translate(500 100)"><path class="draw" pathLength="1" d="M-40 6 H-4 V30 H-40 Z" fill="none" stroke="#EFE8DC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.20s;animation-duration:1.6s"/><path class="draw" pathLength="1" d="M-28 6 V30 M-16 6 V30" fill="none" stroke="#EFE8DC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.38s;animation-duration:1.6s"/><path class="draw" pathLength="1" d="M4 6 H40 V30 H4 Z" fill="none" stroke="#EFE8DC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.56s;animation-duration:1.6s"/><path class="draw" pathLength="1" d="M16 6 V30 M28 6 V30" fill="none" stroke="#EFE8DC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.74s;animation-duration:1.6s"/><path class="draw" pathLength="1" d="M-18 -22 H18 V2 H-18 Z" fill="none" stroke="#E2603B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.92s;animation-duration:1.6s"/><path class="draw" pathLength="1" d="M-6 -22 V2 M6 -22 V2" fill="none" stroke="#E2603B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:1.10s;animation-duration:1.6s"/></g>
+  <text class="mono" x="36" y="52" font-size="14" letter-spacing="2" fill="#8C8377"><tspan fill="#E2603B">04</tspan>  ·  SERVER TOOLING</text>
+  <text class="serif" x="34" y="118" font-size="46" fill="#EFE8DC" letter-spacing="-.5">Virtualmin Docker</text>
+  <g class="serif" font-size="20" fill="#8C8377"><text x="36" y="176">Containers, images, volumes, networks</text><text x="36" y="206">and live logs, orchestrated from</text><text x="36" y="236">Webmin. Security-hardened.</text></g>
+  <line x1="36" y1="270" x2="564" y2="270" stroke="#26221E"/>
+  <text class="mono" x="36" y="300" font-size="14" fill="#EFE8DC">Perl · Docker · Webmin</text>
+  <text class="mono" x="564" y="300" font-size="13" letter-spacing="1.4" text-anchor="end" fill="#D9A441">9 STARS</text>
 </svg>
